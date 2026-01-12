@@ -1,7 +1,5 @@
 # Trabajo de Fin de Grado: *Accesibilidad en videojuegos para personas con visión reducida mediante estrategias de sonificación*
 
-** Consulta las [instrucciones de instalación](INSTALL.md)
-
 ### Autora: María del Mar Martínez Robles
 ### Tutor: Antonio Bautista Bailón Morillas
 ___
@@ -28,7 +26,3 @@ O directamente
 
     make
     
-
-# INSTRUCCIONES
-
-Lee [INSTALL.md](INSTALL.md) para las instrucciones de uso.
