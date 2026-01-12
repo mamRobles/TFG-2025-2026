@@ -33,6 +33,7 @@ Para `Debian`:
 `
 $ sudo apt-get install texlive-lang-european
 `
+
 " No se encuentra fourier.sty "
 
 Para `Debian`:
