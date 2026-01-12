@@ -26,3 +26,16 @@ O directamente
 
     make
     
+## Errores conocidos:
+" No se encuentra el paquete spanish para babel "
+
+Para `Debian`:
+`
+$ sudo apt-get install texlive-lang-european
+`
+" No se encuentra fourier.sty "
+
+Para `Debian`:
+`
+$ sudo apt-get install texlive-fonts-extra
+`
