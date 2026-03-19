@@ -1,16 +1,621 @@
 \chapter{Estado del arte}
 \section{Introducción}
-%TODO redactar intro
-contexto para hacer la revisión (en mi caso redactar una metodología de desarrollo de audiojuegos recopilando todos los avances para facilitar su uso), exponer los objetivos de la misma (ídem). Por qué es necesario y qué pretendo conseguir, metodología, qué preguntas tenía y cómo he generado la consulta, fuentes que he consultado, criterios de aceptación y exclusión…
+El objetivo de esta revisión es encontrar una serie de heurísticas como referencia para evaluar el audiojuego que conformará el desarrollo del trabajo y los subsiguientes que tomen de referencia este documento, así como informarse del estado actual de la tecnología, tanto a un nivel de desarrollo e investigación como legal y social.\\
+
+Debido a la variedad de estudios y aplicaciones de los audiojuegos, ya sea en educación \cite{cabrera-solanoUseAudiogamesStrategic2020, araujoDesignUsabilityBraillebased2016}, estudios de concienciación social \cite{siqueiradasilvaPromotionEmpathyExperience2019}, la evolución transmedia de los medios de comunicación convencionales \cite{campoverdeAudiojuegosNuevaHerramienta2020} o estudios de interacción entre computadores y humanos \cite{cordeiroMurkyShootingUse2012}, es necesaria una revisión bibliográfica que ponga en contexto el presente trabajo y oriente las siguientes secciones adecuadamente. Para explorar todas las dimensiones que afectan al trabajo, se ha realizado un análisis dividido en tres secciones.
+
+\begin{itemize}
+\item En la primera, se investiga el estado de la accesibilidad  tecnológica para personas de visión reducida o nula enmarcando así el trabajo. En esta sección se incluye la legislación vigente, las directrices existentes sobre desarrollo accesible en otros ámbitos de la ingeniería informática y las iniciativas llevadas a cabo desde distintas organizaciones.
+
+\item El segundo estudio, se revisan heurísticas de evaluación de audiojuegos propuestas, se compila el trabajo existente en un análisis sistemático comparativo y se realizan preguntas sobre si se han aplicado dichas heurísticas a desarrollos de audiojuegos, cuánto han sido citadas, si están bien referenciadas y si están  aplicadas en audiojuegos desarrollados o usuarios finales. El propósito de esta sección es recopilar una serie de criterios para evaluar el desarrollo del trabajo y orientar la búsqueda de herramientas para su aplicación.
+    
+\item En el último estudio, se revisan los audiojuegos en un contexto académico. Se consideran trabajos cuyo objetivo sea el desarrollo de un audiojuego y la prueba del mismo con usuarios finales. Se revisa la disponibilidad del código y del ejecutable y el impacto posterior del estudio y su efecto en el desarrollo de audiojuegos accesibles. 
+    
+\end{itemize} 
+
+En cada sección se listarán preguntas que pretenden enmarcar la búsqueda y especificar el análisis a las necesidades de este trabajo. Posteriormente, se consultarán las bases de datos académicas indexadas especificadas en la revisión mediante el uso de palabras clave y se sintetizará la información recopilada para su consulta.\\
+
+En las conclusiones se realizará la lista de heurísticas seleccionadas según los criterios de inclusión y exclusión, el resultado de la búsqueda sobre la relevancia de los trabajos de audiojuegos y su desarrollo y la situación actual de la legislación y la estandarización sobre la accesibilidad en audiojuegos.\\
 
 \section{Revisión}
 % TODO redactar revisión
- En este caso me gustaría clasificar tal vez en secciones según si hablamos de puramente acercamientos a los audiojuegos, audiojuegos mixtos (con visuales) o simplemente interfaces auditivas que ya existen para otras cosas que no son juegos pero se pueden aplicar.
- \subsection{Herramienta de gestión bibliográfica}
-\subsection{Herramientas de desarrollo}
-\subsection{Metodologías de desarrollo}
-\section{Conclusión}
-% TODO redactar conclusión
-Conclusión: hallazgos de la revisión, puntos más fuertes o probados como resultado e introducir la metodología que se va a usar en la propuesta, para explicarla en el siguiente capítulo.
-El software libre y sus licencias \cite{gplv3} ha permitido llevar a cabo una expansión del
-aprendizaje de la informática sin precedentes.
+
+ En las siguientes secciones se presenta el trabajo relacionado, identificado tras una búsqueda bibliográfica utilizando, como bases de datos de referencia, Scopus, Google Scholar %TODORELLENAR 
+ Tras elegir las bases de datos, se realizaron búsquedas utilizando las siguientes palabras clave: \say{audiojuegos},
+ 
+ \subsection{Herramientas utilizadas para la revisión y sus secciones}
+ 
+ Para la clasificación e indexado de las referencias estudiadas, se hizo un pequeño estudio comparativo de algunas herramientas de gestión bibliográfica. Se tuvieron en cuenta los siguientes criterios:
+ \begin{itemize}
+ 	\item Disponibilidad para Linux.
+ 	\item Gratuidad. \textit{freemium}, gratis o de pago. 
+ 	\item Licencia de la aplicación. Propietaria, Libre u \textit{Open Source}.
+ 	\item Disponibilidad de un \textit{plugin} para el navegador Firefox, para facilitar la indexación.
+ 	\item Integración adecuada con las herramientas utilizadas en el trabajo, como la facilidad de exportación a BibLaTeX.
+ 	\item Gestión del almacenamiento. Local o en la nube y si esas opciones están disponibles a través de un pago o gratuitamente.
+ \end{itemize}
+
+\begin{center}
+	\begin{table}[h]
+		\centering
+		\caption{Comparativa de gestores bibliográficos}
+		\label{table:comp-gestores-bib}
+		\begin{adjustbox}{max width=\textwidth}
+\begin{NiceTabular}{ |>{\centering\arraybackslash}m{3.3cm}||>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|  }
+
+\midrule
+\textbf{Criterio} \textbackslash \textbf{Gestor} & \textbf{Endnote} & \textbf{Zotero} & \textbf{Mendeley} & \textbf{JabRef} \\
+\midrule[1pt]
+\textbf{Disponibilidad para Linux} & Solo web/virtualizado & Sí  & Sí (desktop y web) & Sí \\
+\midrule
+\textbf{Gratuidad / modelo de negocio} & Pago, con versión web gratuita, o necesaria licencia institucional & Gratis + opcional almacenamiento \textit{cloud premium} & \textit{Freemium} (limitado por almacenamiento) & Libre y gratis  \\
+\midrule
+\textbf{Licencia}  & Propietaria   & Libre, \textit{Open Source}  & Propietaria & Libre, \textit{Open Source} \\
+\midrule
+\textbf{\textit{Plugin} Firefox (captura web)}  & Sí & Sí & Sí & Sí \\
+\midrule
+\textbf{Exportar a BibLaTex}  & Sí (exportar bibliografía) & Sí (importar/exportar BibLaTeX) & Sí (exportar .bib) & Nativo \\
+\midrule
+\textbf{Almacenamiento} & Local + (opcional) nube plan pago & Local + (opcional) nube plan pago  & Local + (opcional) nube plan pago & Solo local     \\   
+\midrule
+\end{NiceTabular}
+\end{adjustbox}
+\end{table}
+\end{center}
+
+ Como resultado del análisis dispuesto en la tabla \ref{table:comp-gestores-bib}, se concluye que tanto Zotero como JabRef cumplen los requisitos para ser utilizados en este trabajo debido a su licencia abierta y compatibilidad. Se decide utilizar Zotero finalmente como gestor bibliográfico.
+ \subsection{Legislación y contexto}
+ En esta sección, se revisan los planes de inclusión de diferentes cuerpos legislativos en los que se enmarca el proyecto, la legislación vigente en materia de accesibilidad para personas con discapacidad visual en contextos tecnológicos, las directrices existentes sobre desarrollo accesible en otros ámbitos de la ingeniería informática y  las iniciativas llevadas a cabo desde distintas organizaciones. \\
+ 
+ Respecto a los planes de inclusión vigentes, se han consultado a distintos ámbitos y niveles de influencia.\\
+ 
+ En la Universidad de Granada, el último plan de accesibilidad es el \say{I Plan sobre la Accesibilidad Universal e Inclusión Social de la Universidad de Granada}, aprobado el 21 de noviembre de 2022. Entre sus ejes estratégicos, en el eje 8 \say{accesibilidad universal} se contabiliza como objetivo \say{Acción 8.2.2: Publicar material en abierto con recomendaciones para facilitar la accesibilidad a la información y a la comunicación} \cite[p ~103]{iplan-accesibilidad-ugr}. Forma también parte como objetivo de la Universidad la \say{Acción 8.2.5: Incluir subtítulos y audiodescripciones en los contenidos audiovisuales de todas las comunicaciones de la universidad para garantizar la accesibilidad de las personas con discapacidad auditiva o visual}\cite[p ~104]{iplan-accesibilidad-ugr}. Ambos objetivos afectan directamente al ámbito de este trabajo, ya que el desarrollo de un audiojuego y su evaluación con heurísticas específicas pueden utilizarse en otros campos de la informática para adaptar la interfaz al usuario que presente la discapacidad visual y así facilitar el uso de las plataformas digitales.\\
+ 
+ A un nivel nacional, existe el \say{II Plan Nacional de Accesibilidad} presentado en 2023 por el Ministerio de Derechos Sociales y Agenda 2030. En él, se presenta que, tras una encuesta realizada durante la elaboración del plan, del total de los encuestados la discapacidad sensorial visual era la segunda predominante \cite[p ~54]{plan-nacional-accesibilidad-2023}. En esa misma encuesta, se revela que la principal disconformidad respecto a las tecnologías, es su difícil comprensión. Respecto a la materia de este trabajo, no se explicita el foco sobre los audiojuegos, puesto que no entran en las competencias del estado, pero sí es parte de los objetivos específicos la Medida 5.2.4 \say{Impulsar la innovación social y tecnológica en materia de accesibilidad} \cite[p ~41]{plan-nacional-accesibilidad-2023}. Los avances en este trabajo participan en esta medida, investigando el desarrollo en tecnologías de sonificación que pueden aplicarse en otros ámbitos tecnológicos que requieran adaptación.\\
+ 
+ Aparte de los planes de accesibilidad, existe legislación específica destinada a la inclusión de personas con discapacidad tanto en el estado español como en la comisión europea.\\
+ 
+ En términos legislativos españoles, el \say{Real Decreto 193/2023, de 21 de marzo}, regula  las condiciones de accesibilidad para las personas con discapacidad respecto el acceso y utilización de los bienes y servicios del estado \cite{ministeriodederechossocialesyagenda2030RealDecreto1932023}. Como parte de servicios, incluye \say{actividades [...], profesionales, artísticas y recreativas} que estén dispuestas al público, es decir, \say{que se encuentran en situación de ser adquiridos, contratados, consumidos o usados por la ciudadanía [...], a cambio o no de renumeración}\cite[p ~6]{ministeriodederechossocialesyagenda2030RealDecreto1932023}, en lo que se incluyen tanto audiojuegos educativos como lúdicos. En él, se mencionan varios ámbitos donde los avances de sonificación y descripción auditiva del contexto podrían utilizarse, como la administración pública, que está obligada a garantizar su accesibilidad universal en páginas o sitios de Internet abiertos al público general \cite[p ~10]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}. También las administraciones educativas están obligadas a la adaptación de los sistemas, materiales y soportes educativos digitales y tecnológicos para evitar la exclusión de las personas con discapacidad \cite[p ~13]{ministeriodederechossocialesyagenda2030RealDecreto1932023}. Estas medidas forman parte de los pliegos y licitaciones públicas pertinentes, afectando así a los terceros contratados por las administraciones pertinentes que deban realizar aplicaciones para ellas \cite[p ~17]{ministeriodederechossocialesyagenda2030RealDecreto1932023}.\\
+ 
+ Además, el \say{Real Decreto Legislativo 1/2013, de 29 de noviembre} describe los derechos básicos de las personas con discapacidad. El objeto de esta ley es garantizar el derecho a la igualdad de oportunidades y de trato de las personas con discapacidad, en lo que incluye la accesibilidad universal \cite[p ~ 10]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, materia principal de este trabajo académico. Incluidos en los ámbitos de aplicación, se encuentran \say{Telecomunicaciones y sociedad de la información} y \say{bienes y servicios a disposición del público} \cite[p ~ 13]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, categorías en las que se enmarcan los audiojuegos. Entre los derechos descritos en esta ley, los conocimientos delineados y desarrollados en este trabajo pueden aplicarse en el artículo 16 (educación) \cite[p ~ 17]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, a través de \textit{serious games} educativos \cite{cabrera-solanoUseAudiogamesStrategic2020}; el artículo 22 (accesibilidad) \cite[p ~ 19]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, mediante la integración de las personas con discapacidad en servicios y bienes lúdicos \cite{andradeIntroducingGamerInformationControl2020}; en el artículo 24 que exige a los productos y servicios de las sociedad de la información ser accesibles \cite[p ~ 20]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, cualidad que los audiojuegos pueden proveer \cite{campoverdeAudiojuegosNuevaHerramienta2020} y el artículo 59 de toma de conciencia social \cite[p ~30]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, que es posible alcanzar con audiojuegos \cite{siqueiradasilvaPromotionEmpathyExperience2019}. \\
+ 
+ A escala Europea, existen dos legislaciones relevantes a este trabajo. Primeramente, existe la \say{Directiva (UE) 2016/2102 del Parlamento Europeo y del Consejo, de 26 de octubre de 2016, sobre la accesibilidad de los sitios web y aplicaciones para dispositivos móviles de los organismos del sector público} \cite{DirectiveEU20162016} y su real decreto correspondiente del 7 de septiembre de 2018 \cite{ministeriodelapresidenciarelacionesconlascorteseigualdadRealDecreto11122018}. Esta directiva dicta las exigencias de accesibilidad en sitios web y aplicaciones móviles de entidades públicas, tales como las pertenecientes al estado español como la Universidad de Granada. Si bien el desarrollo de este trabajo no entra en los ámbitos específicos delimitados por la ley, las estrategias de sonificación descritas son adaptables a aplicaciones móviles \cite{cordeiroMurkyShootingUse2012}, presentando posibles trabajos futuros derivados de este.  \\
+ 
+ La segunda, la \say{Ley Europea de Accesibilidad} o \say{Acto europeo de accesibilidad (EAA)} \cite{DirectiveEU20192019}, adoptada en 2019 y aplicada al estado español a través de la Ley 11/2023 de 8 de mayo \cite{jefaturadelestadoLey1120232023}, regula un ámbito más amplio, e incluye servicios y productos disponibles en la Unión Europea, extendiéndose así al sector privado. Uno de los sectores afectados por este acto es el desarrollo de software, ya que establece que los activos digitales deben ser accesibles para usuarios con discapacidades, incluyendo aplicaciones móviles, contenido multimedia y software \cite[p ~83]{DirectiveEU20192019}. Si bien los bienes lúdicos no están incluidos en esta directiva, los desarrollos en estrategias de sonificación y su evaluación pueden ser aplicados a los ámbitos de la ley.\\
+
+ A continuación, se estudian las directrices estandarizadas y normativas pertinentes a la accesibilidad en ingeniería informática, con un énfasis en las secciones destinadas a personas con discapacidad visual.
+ 
+ La WCAG, \say{\textit{Web Content Accessibility Guidelines}}, es la referencia de accesibilidad más citada en trabajos de esta materia en sus distintas versiones\cite[p ~201]{almeidaEvaluacionesHeuristicasPara2023}, así como su modelo de evaluación RSL \cite[p ~214]{almeidaEvaluacionesHeuristicasPara2023}. A pesar de que el foco de estas directrices es el desarrollo web, debido a su relevancia en el campo de estudio se ha considerado para este trabajo. Cabe destacar que las recomendaciones de la WCAG 2.2 existen recogidas en el estándar internacional ISO/IEC 40500:2025 \cite{ISOIEC40500a} para su referenciado por parte de organismos públicos. A nivel europeo, los criterios de WCAG 2.1 forman parte del estándar europeo EN 301549 \cite{EN301549-2021} y de su versión oficial en español  UNE-EN 301549:2022 \cite{UNEEN3015492022}. WCAG 2.2 tiene 13 pautas, organizadas bajo cuatro principios: perceptible, operable, comprensible y robusto. Para cada pauta, existen criterios de conformidad, clasificados en tres niveles A, AA y AAA. Debido a que estos criterios se podrían clasificar como heurísticas, serán referenciados en la sección posterior.\\
+  \begin{figure}
+  	\caption{Número de publicaciones de estándares y legislaciones vigentes por año y organización. Elaboración propia.}
+  	\label{fig:normasAnio}
+ 	\begin{center}
+ 		\centering
+ 		\begin{adjustbox}{max width=\textwidth}
+ 			\includegraphics[width=\textwidth]{figuras/normativas_anio.png}
+ 		\end{adjustbox}
+ 		
+ 	\end{center}
+ 	
+ \end{figure}
+ La norma internacional ISO 9241-171:2025 está diseñada para especificar requerimientos y guías para diseñar software accesible para personas con todo tipo de discapacidades sensoriales y cognitivas. Aplica tanto a software diseñado para web, como aplicaciones móviles, dispositivos domésticos o sistemas educativos \cite[p ~14]{ISOIEC40500}. Este documento no clasifica las medidas según el grupo demográfico al que ayudan, sino que las categoriza en base al propósito que cumplen, como que los sistemas sean perceptibles, entendibles, controlables, utilizables, equitativos y resistentes a errores, entre otras características \cite{ISOIEC40500}. Las directrices en este documento sirven para el diseño y desarrollo software accesible en general y múltiples de estas directrices son aplicables al caso de uso de este estudio.\\
+ 
+ Respecto al estándar europeo EN 301 549 V3.2.1 \cite{EN301549-2021} y su versión española UNE-EN 301549:2022 \cite{UNEEN3015492022}, definen los requerimientos de productos y servicios basados en tecnologías de la información y comunicación. Es posible demostrar el cumplimiento de la directiva 2016/2102 \cite{DirectiveEU20162016} a través de este estándar \cite[p ~89]{EN301549-2021} y existe una actualización planificada para que también sea compatible con el Acto europeo de accesibilidad (EAA) \cite{DirectiveEU20192019}. Este documento se puede aplicar a cualquier producto tecnológico, incluyendo así aplicaciones de ordenador como audiojuegos. Considera por separado el uso de estas tecnologías sin visión y con visión limitada y reconoce que las herramientas de visión nula pueden beneficiar a los usuarios con visión limitada \cite[p ~ 20]{EN301549-2021}. Las directrices específicas junto a las tablas de conformidad de la normativa serán discutidas en la sección de heurísticas como métodos de evaluación del desarrollo. \\
+ 
+ En el momento de investigar la legislación vigente para este trabajo, se encuentra que la norma UNE 139802 de julio de 2009, norma española basada en la Norma europea EN ISO 9241-171:2008, que a su vez adopta la Norma Internacional ISO 9241-171:2008, no ha sido reemplazada por la equivalente a la versión actual ISO de 2025 como sí lo ha hecho la norma europea \cite{UNE139802-2009}. Debido a que las actualizaciones de los estándares son más recientes, para la sección de heurísticas se considerarán los criterios de las directrices europeas y no las de esta norma. \\ 
+ 
+ Por último, entre los estándares existentes, es preciso señalar la existencia de WAI-ARIA, que ofrece una especificación técnica que pueden añadirse al código fuente de una página web para proporcionar información semántica adicional a las tecnologías de asistencia, como los lectores de pantalla \cite{AccessibleRichInternet}. Si bien el desarrollo de este trabajo no está basado en la web, la iniciativa podría tomarse de referencia para las consideraciones futuras sobre complementos a la programación existente de aplicaciones software para favorecer la accesibilidad universal.\\
+
+ Todos los estándares y leyes aquí mencionados se encuentran recogidos y resumidos en la tabla \ref{table:legisl-resum} y sus años de publicación en la figura \ref{fig:normasAnio}. Para concluir la sección de legislación y contexto, resulta pertinente mencionar las iniciativas pertinentes llevadas a cabo desde distintas organizaciones.\\
+ \begin{center}
+ 	
+ 	\begin{table}[h]
+ 		\centering
+ 		\caption{Resumen de legislación y normativa sobre accesibilidad}
+ 		\label{table:legisl-resum}
+ 		\begin{adjustbox}{max width=\textwidth}
+ 			\begin{NiceTabular}{ |>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{4cm}| >{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{4cm}|  }
+ 				
+ 				\midrule
+ 				\textbf{UGR} & \textbf{España} & \textbf{Europa} & \textbf{Internacional} & \textbf{W3C}\\
+ 				\midrule
+ 				\midrule
+ 				\textbf{I Plan sobre la Accesibilidad Universal e Inclusión Social de la UGR.}
+ 				Entre sus ejes estratégicos contabiliza facilitar la accesibilidad a la información y comunicación y las audiodescripciones. & \textbf{Real Decreto Legislativo 1/2013 de 29 de noviembre} 
+ 				Describe los derechos básicos de las personas con discapacidad, entre ellos la accesibilidad universal. & \textbf{Directiva (UE) 2016/2102}
+ 				Dicta las exigencias de accesibilidad en sitios web y aplicaciones móviles de entidades públicas.  & \textbf{ISO/IEC 40500}
+ 				WCAG 2.2 recogido en estándar internacional para su referencia oficial. & \textbf{WAI-ARIA}
+ 				Especificación técnica para proporcionar información a tecnologías de asistencia en la web. \\
+ 				\midrule
+ 				& \textbf{UNE-EN 301549:2022}
+ 				Versión española de EN 301 549 V3.2.1 & \textbf{Ley Europea de Accesibilidad (EAA)}
+ 				Regula servicios y productos disponibles en la UE para que sean accesibles para usuarios con discapacidades. & \textbf{ISO 9241-171:2025}
+ 				Especifica requerimientos y guías para diseñar software accesible. & \textbf{WCAG 2.2}
+ 				Referencia de accesibilidad web recogidas en ISO/IEC 40500.  \\
+ 				\midrule
+ 				& \textbf{Real Decreto 193/2023}
+ 				Regula las condiciones de accesibilidad para las personas con discapacidad respecto al acceso y utilización de los bienes y servicios del estado.   & \textbf{EN 301 549 V3.2.1}
+ 				Define requerimientos de productos y servicios basados en tecnologías de información y comunicación. &  &  \\
+ 				\midrule
+ 				& \textbf{II Plan Nacional de Accesibilidad}
+ 				Como parte de sus objetivos, considera impulsar la innovación social y tecnológica en materia de accesibilidad. &  &  &  \\
+ 				\midrule
+ 			\end{NiceTabular}
+ 		\end{adjustbox}
+ 	\end{table}
+ 	
+ \end{center}
+ En la Universidad de Granada, el Grupo de Investigación Tracce estudia la accesibilidad universal a través de la Traducción e Interpretación Accesible (TeIA) en materia de divulgación del conocimiento, ciencia, arte, museos, turismo o integración social \cite{TracceUGR}.\\ %TODO hablar con el grupo TRACCE 
+ 
+ Como parte de los proyectos europeos académicos en los que ha participado la UGR, se señala el Catálogo de criterios EQui-T, entre cuyas dimensiones se encuentra la accesibilidad \cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025}. En su marco ampliado, se indican los criterios de calidad más importantes en materia de creación de recursos educativos. Si bien el objetivo principal de este proyecto está relacionado con los bienes y servicios correspondientes a la educación, marca algunos criterios relevantes para el desarrollo de un audiojuego accesible, como la audiodescripción de imágenes y vídeos \cite[p ~77]{jimenezhurtadoDimensionsSubdimensionsEQUIT2025}. \\
+ 
+ Desde la institución ONCE con el apoyo de AEVI, la asociación española de videojuegos, han creado dos propuestas relacionadas con los audiojuegos. La primera es Ga11y, una página destinada a la recopilación de información sobre videojuegos accesibles \cite{Ga11y2022}. En ella, han indexado heurísticas de desarrollo de videojuegos accesibles, presentes en formato libro en la segunda propuesta: el \say{Libro blanco de accesibilidad para desarrolladores}. Dichos criterios están clasificados según el perfil de prestación funcional y la dificultad de implementación. En el libro están presentes tablas de requisitos según el público objetivo del videojuego, para la evaluación de los juegos \cite{LibroBlancoAccesibilidad}. Además, cuentan con un catálogo en la web, en el que han analizado videojuegos según su accesibilidad clasificada en perfiles, dispositivos, clasificación PEGI y género.\\
+
+ 
+
+ \subsection{Heurísticas}
+ 
+ Para esta sección, se han tenido en cuenta trabajos académicos y normativas internacionales, europeas y españolas, así como otras iniciativas de entidades especializadas en accesibilidad. El objetivo es recopilar las heurísticas más importantes para un audiojuego, para la posterior evaluación del desarrollo del trabajo. Como criterio para determinar qué requisitos se adaptan mejor a las características del estudio, se han buscado trabajos que especifiquen heurísticas para audiojuegos, videojuegos y software. En cada uno, se citan los trabajos en los que están presentes.\\
+ 
+ Se presenta el trabajo relacionado, identificado tras una búsqueda bibliográfica utilizando, como bases de datos de referencia, Elsevier, la biblioteca de la UGR, AENOR y Google Scholar. Tras elegir las bases de datos, se realizó una búsqueda utilizando las siguientes palabras clave: \say{\textit{audiojuegos}}, \say{\textit{Accesibility}}, \say{\textit{Accesible games}}, \say{\textit{Digital accessibility}},  \say{\textit{Heuristic evaluation}}, \say{\textit{Users who are blind}}, \say{\textit{Videogames}} y \say{\textit{Visually impaired users}}.\\
+ 
+ Para la realización del análisis comparativo, se utiliza de referencia el procedimiento utilizado en \say{Modelos para el análisis comparativo de herramientas de software: Una revisión sistemática de la literatura} \cite{romerodesouzaferreyraModelosParaAnalisis2017}, que a su vez toma como referencia \cite{GuidelinesPerforming}. Se revisan ambos para este trabajo. \\
+   \begin{figure}
+ 	\caption{Número de publicaciones de heurísticas de evaluación de audiojuegos analizadas. Elaboración propia.}
+ 	\label{fig:heurisAnio}
+ 	\begin{center}
+ 		\centering
+ 		\begin{adjustbox}{max width=\textwidth}
+ 			\includegraphics[width=\textwidth]{figuras/heuris_sintitulo.png}
+ 		\end{adjustbox}
+ 		
+ 	\end{center}
+ 	
+ \end{figure}
+ Como criterio de búsqueda, se tomaron primero los siguientes criterios de inclusión y exclusión:\\
+ \begin{itemize}
+ 	\item [\textbf{Inclusión:}]
+ 	\item  CI.1. Se incluyen artículos en Inglés y Español.
+ 	\item  CI.2. Se consideran artículos o trabajos indexados en librerías digitales.
+ 	\item  CI.3. Los artículos están desarrollados para crear criterios de desarrollo de audiojuegos, software o juegos accesibles.
+ 	\item  CI.4. Se aceptarán artículos que contengan una lista de heurísticas o criterios de desarrollo de dichos juegos.
+ 	\item  CI.5. Se consideran artículos orientados a la accesibilidad de personas con discapacidad visual total o parcial.
+	\item  CI.6. Se considerarán todos los artículos de un rango de unos diez años (2015-2026), para asegurar una revisión rigurosa de la literatura específica de la última década.
+	\item  CI.7. Se aceptarán artículos provenientes de empresas, revistas científicas, conferencias u otras fuentes de autoridad.
+	\item CI.8. Se consideran los artículos que provengan del área de la Ingeniería Informática.
+	\item [\textbf{Exclusión:}]
+	\item  CE.1. Serán excluidos artículos duplicados, incompletos o desfasados según otra literatura que los corrija posteriormente.
+	\item  CE.2. Serán rechazados los artículos similares que no se acoten correctamente al estudio (heurísticas para juegos sin el criterio de accesibilidad, heurísticas para web o aplicaciones móviles o desarrollo software general que no aplique a la temática del trabajo).
+	\item  CE.3. Serán excluidos los artículos cuyo título o palabras clave no tengan relación con el objeto de estudio.
+	\item CE.4. Serán excluidas normativas que, por la fecha de desarrollo del trabajo, no hayan sido actualizadas, pero que tengan un equivalente moderno en vigor.
+\end{itemize}
+ Para la selección de los documentos de referencia, se considera el siguiente procedimiento:
+ \begin{enumerate}
+ 	\item Se realiza una búsqueda en las bases de datos indexadas utilizando las palabras claves y considerando los criterios de inclusión CI.1, CI.2 y CI.6.
+ 	\item Se revisan los títulos y fechas de los artículos seleccionados, excluyendo los que no cumplen los criterios CI.8, CE.1, CE.3 y CE.4.
+ 	\item Se revisan los contenidos de los estudios, para la exclusión según los criterios CI.3, CI.4, CI.7 y CE.2. 
+ 	\item Se realiza una revisión preliminar de las heurísticas de los artículos restantes del paso 3, para aplicar el criterio CI.5.
+ \end{enumerate}
+
+Una vez seleccionados los artículos, para considerar la validez de las heurísticas se han elaborado criterios de evaluación de calidad siguiendo las siguientes puntuaciones: Sí cumple (S) = 1, Cumple parcialmente (P) = 0.5, y No cumple (N) = 0, siguiendo la metodología de \cite{romerodesouzaferreyraModelosParaAnalisis2017}. Dichos criterios quedan descritos en la tabla \ref{table:crit-heur-calid}. Cabe destacar que las puntuaciones en estos criterios son bajas, puesto que la mayoría no supera la mitad del máximo obtenible (3). Esto se debe a que los trabajos de heurísticas no suelen realizar audiojuegos o encuestas, sino que otros trabajos de desarrollo las aplican posteriormente a su publicación. Además, la mayoría no cumplen el C4 por las pocas publicaciones relacionadas con la temática, impidiendo que los trabajos tengan más de 30 referencias. Esto se cumple también para este trabajo. Por último, no se suelen discutir las limitaciones de los estudios en esta categoría de trabajos, a pesar de que las muestras seleccionadas para las encuestas suelen ser pequeñas y no significativas.\\
+
+\begin{center}
+	
+	\begin{table}[h]
+		\centering
+		\caption{Criterios de evaluación de calidad}
+		\label{table:crit-heur-calid}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{NiceTabular}{ |>{\centering\arraybackslash}c|>{\centering\arraybackslash}l|  }
+				
+				\midrule
+				\textbf{N.} & \textbf{Criterio de evaluación de calidad} \\
+				\midrule
+				1 & \begin{tabular}{@{}l@{}}¿Se ha realizado la evaluación de las heurísticas mediante el desarrollo de un audiojuego? \\ 
+					\midrule[0.5pt]
+					S: Se ha desarrollado al menos un audiojuego basado en las heurísticas de evaluación. \\
+					P: Se han evaluado audiojuegos con las heurísticas, pero no se ha desarrollado uno para el artículo. \\
+					N: No se evalúa ningún audiojuego en el trabajo. \\\end{tabular} \\
+				\midrule
+				2 & \begin{tabular}{@{}l@{}}¿Se ha realizado una encuesta con la demografía objetivo sobre la validez de las heurísticas? \\ 
+					\midrule[0.5pt]
+					S: Como parte de la metodología, se ha realizado una encuesta a personas con discapacidad visual. \\
+					P: Se han probado las heurísticas con personas sin discapacidad visual, siguiendo los criterios, o \\ se realizó la encuesta previa al desarrollo de las heurísticas propuestas. \\
+					N: No se realiza ninguna encuesta a ningún usuario final. \\\end{tabular} \\
+				\midrule
+				3 & \begin{tabular}{@{}l@{}}
+					¿El método seleccionado para llevar a cabo el estudio ha sido documentado \\apropiadamente? \cite[p ~23]{GuidelinesPerforming} \\ 
+					\midrule[0.5pt]
+					S: El método ha sido documentado apropiadamente. \\
+					P: El método ha sido documentado parcialmente. \\
+					N: No se realiza ninguna documentación del método seguido. \\
+				\end{tabular} \\
+				\midrule
+				4 & \begin{tabular}{@{}l@{}}¿La muestra de referencias heurísticas es significativa? \cite[p ~23]{GuidelinesPerforming} \\ 
+					\midrule[0.5pt]
+					S: Se han referenciado 30 proyectos o más de heurísticas de evaluación. \\
+					P: Se han referenciado entre 10 y 30 proyectos de evaluación. \\
+					N: Se han referenciado menos de 10 proyectos de evaluación. \\\end{tabular} \\
+				\midrule
+				5 & \begin{tabular}{@{}l@{}}¿Los problemas de accesibilidad detectados en las muestras corresponden a heurísticas\\ descritas en el trabajo?  \\ 
+					\midrule[0.5pt]
+					S: Se documentan problemas de accesibilidad en las muestras de audiojuegos que se \\corresponden a heurísticas adecuadamente descritas. \\
+					P: Se detectan problemas de accesibilidad no relacionados adecuadamente a las heurísticas. \\
+					N: No se realiza un análisis de problemas de accesibilidad en relación a las heurísticas \\\end{tabular} \\
+				\midrule
+				6 & \begin{tabular}{@{}l@{}}¿Discute el estudio sus limitaciones?  \\ 
+					\midrule[0.5pt]
+					S: Se reconocen claramente las limitaciones del estudio. \\
+					P: Se mencionan algunas limitaciones de forma breve. \\
+					N: No se consideran las limitaciones. \\\end{tabular} \\
+				\midrule
+			\end{NiceTabular}
+		\end{adjustbox}
+	\end{table}
+\end{center}
+\begin{center}
+	\begin{table}[h]
+		\centering
+		\caption{Evaluación de calidad de los estudios seleccionados}
+		\label{table:crit-heur-calid-por-estudio}
+		\begin{adjustbox}{max width=\textwidth}
+			\begin{NiceTabular}{ |>{\centering\arraybackslash}c|>{\centering\arraybackslash}c|>{\centering\arraybackslash}c|>{\centering\arraybackslash}c|>{\centering\arraybackslash}c|>{\centering\arraybackslash}c|>{\centering\arraybackslash}c|>{\centering\arraybackslash}c| }
+				\midrule
+				\textbf{Ref.} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} & \textbf{C5} & \textbf{C6} & \textbf{Total} \\	
+				\midrule
+				\cite{LibroBlancoAccesibilidad} & 0.5 & 0 & 0.5 & 0 & 1 & 0 & 2 \\
+				\midrule
+				\cite{nesteriukAudiogamesAccessibilityInclusion2018a}  & 0.5 & 0 & 1 & 1 & 0 & 0 & 2.5 \\
+				\midrule 
+				\cite{EN301549-2021}  & 0 & 0 & 0.5 & 1 & 0 & 0 & 1.5 \\
+				\midrule
+				\cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025}  & 0 & 0 & 1 & 1 & 0 & 0 & 2 \\
+				\midrule
+				\cite{teixeiraborgesFairPlayGuidelines2018a} & 0 & 0.5 & 1 & 0.5 & 0.5 & 0 & 2.5 \\
+				\midrule
+				\cite{WebContentAccessibility}  & 0 & 1 & 1 & 0 & 0 & 0 & 2 \\
+				\midrule 	
+				\cite{deborbacamposUsabilityAccessibilityGameplay2016}  & 0 & 0 & 1 & 0.5 & 1 & 0 & 2.5 \\
+				\midrule 
+				\cite{teixeiraborgesImBlindCan2017}  & 0.5 & 0.5 & 1 & 0.5 & 1 & 0 & 3.5 \\
+				\midrule
+				\cite{araujoMobileAudioGames2017a}  & 0.5 & 1 & 1 & 0.5 & 1 & 1 & 5 \\
+				\midrule 
+				\cite{agrimiGameAccessibilityVisually2024}  & 0 & 0 & 0.5 & 0.5 & 0 & 0.5 & 1.5 \\
+				\midrule 
+				\cite{falkEngagingGameplayAudio2020}  & 1 & 1 & 1 & 0 & 0.5 & 1 & 4.5 \\
+				\midrule 
+				\cite{keilSoundsEngagingInvestigating2025}  & 0 & 1 & 0 & 0 & 0.5 & 0.5 & 2 \\
+				\midrule 
+				\cite{darinPrinciplesEvaluatingUsability2019}  & 0 & 0.5 & 1 & 0.5 & 0 & 0 & 2 \\
+				\midrule
+				\cite{urbanekSoundBananasRules2018}  & 0 & 0.5 & 1 & 0.5 & 0 & 0 & 2 \\
+				\midrule
+			\end{NiceTabular}
+		\end{adjustbox}
+	\end{table}
+\end{center}
+
+Tras seguir los pasos descritos previamente, se obtienen un total de 14 artículos de diferentes fuentes que contienen heurísticas o técnicas de evaluación de audiojuegos aplicables al trabajo. Los años de publicación de dichos trabajos se encuentran recogidos en la figura \ref{fig:heurisAnio}. Tras seleccionar las heurísticas, se han confeccionado y condensado 26 recomendaciones específicas. Las recomendaciones tienen preguntas asociadas que los desarrolladores pueden hacerse para comprobar el cumplimiento de la heurística, así como algunas técnicas relacionadas. No todas las preguntas aplican a todos los tipos de audiojuego, puesto que hay elementos variables como la interfaz gráfica o el género, pero en caso de que las características a las que hacen referencia las heurísticas estuvieran presentes, las preguntas y las técnicas sirven de orientación al desarrollo. Estas técnicas son decisiones de diseño que se deben tener en cuenta en fases iniciales del desarrollo \citeauthor{AEVIFundacionONCE2023}, lo cual puede explicar la cantidad reducida de juegos accesibles para personas con discapacidad visual. \\
+
+\begin{center}
+\centering
+	\textbf{EXPERIENCIA DE JUEGO, NIVEL Y PROGRESIÓN}
+\end{center}
+	\textbf{H1 Lenguaje claro}: Utilizar diálogos sencillos y claros para que las instrucciones del juego sean fáciles de entender. Dichos diálogos deben tener subtítulos sincronizados con el audio que se emite. \cite{EN301549-2021} \cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+	\textbf{Preguntas:}
+\begin{itemize}
+		\item ¿Son los conceptos utilizados en el audiojuego comprensibles? ¿Sigue el juego tendencias establecidas por jugadores facilitando su entendimiento? ¿Está claro cuándo habla un personaje u otro? ¿Se ha simplificado el diálogo para adaptarlo a las limitaciones del medio (espacio, tiempo de lectura)? ¿Están los subtítulos coordinados con el diálogo?
+\end{itemize}
+	\textbf{Técnicas:}
+	\begin{itemize}
+		\item \textbf{Subtitulado}: Todos los elementos no textuales deben tener una alternativa en texto que sirve su propósito equivalente. Proveer descripciones escritas de los diálogos del juego, configurables en opciones, que indiquen quién habla y qué dice. \cite{WebContentAccessibility}
+	\end{itemize}
+	\textbf{H2 Experiencia de juego}: Ofrecer información predecible y esperada, haciendo que el contenido, la navegación, los retos y la funcionalidad del juego sean coherentes con las mecánicas del mismo. Lo mostrado en pantalla debe tener una correlación directa con la interfaz auditiva. \cite{falkEngagingGameplayAudio2020} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{EN301549-2021} \cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Es la progresión del juego intuitiva? ¿Puede el usuario saber su puntuación, vida, objetivos o estado en cualquier momento? ¿Los controles del juego son coherentes, intuitivos y están asignados de forma natural? ¿Siente el jugador que sus acciones afectan el mundo del juego? ¿El juego recompensa la experiencia del jugador? ¿El juego presenta retos que involucren al usuario? ¿Es la orientación del juego posible y adecuada para el usuario en todo momento? ¿Es consciente el usuario de los elementos con los que puede interactuar y la consecuencia de hacerlo? 
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Ayuda a la navegación}: Colocar marcadores (afectan al diseño de juego y controles) que ayudan al jugador a desplazarse hasta su objetivo, girar la cámara de forma automática e incluir una búsqueda de caminos o sistema de autoguiado. Añadir notificaciones que mejoren la orientación. Indicar si hay fosas, paredes, espacios abiertos o puertas. Todos los elementos deben ser identificados de forma inequívoca \cite{LibroBlancoAccesibilidad} . Reproducir pistas de audio que indiquen la orientación actual del personaje (\say{Norte}, \say{Sur}, etc.) \cite{araujoMobileAudioGames2017a}.
+\end{itemize}
+	\textbf{H3 Niveles de dificultad}: Ofrecer diferentes niveles de dificultad y permitir que se ajusten durante el juego. Permitir al jugador practicar las mecánicas y mejorar con la experiencia. \cite{falkEngagingGameplayAudio2020} \cite{araujoMobileAudioGames2017a} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Se ofrecen distintos niveles de dificultad u opciones personalizables que los modifican? ¿Puedes volver a un punto de guardado previo? ¿Se ofrecen distintos objetivos/niveles/retos que requieren de habilidades y experiencia del usuario? Al iniciar el juego, ¿es capaz el usuario de comprenderlo? ¿Recibe el usuario ayudas acordes con el contexto del juego? ¿Es consciente el usuario de las consecuencias en el mundo del juego en base a sus acciones? ¿Es fácil aprender a jugar, pero difícil dominarlo, independientemente de si el usuario tiene discapacidad visual o no? ¿Ofrece el audiojuego distintas formas de lograr sus objetivos? ¿Está la dificultad del juego equilibrada al nivel de habilidad del usuario?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Resistencia}: Activar modo infinito de balas, vida, oxígeno, etc. Los elementos consumibles deben ser personalizables a un modo infinito de dichos recursos. \cite{LibroBlancoAccesibilidad}
+	\item \textbf{Omitir mecánicas}: Resolver automáticamente puzles u otras mecánicas complejas. Pueden saltarse o resolverse visiblemente en el juego. \cite{LibroBlancoAccesibilidad}
+	\item \textbf{Dificultad}: En la fase de diseño de niveles, se deben considerar de 2 a 4 capas de dificultad. Se debe poder seleccionar dicha dificultad en el menú de opciones o al iniciar la partida. \cite{LibroBlancoAccesibilidad} 
+\end{itemize}
+\textbf{H4 Inicio rápido}: Permitir que el juego se inicie rápidamente, sin necesidad de navegar por varios menús.\cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item Al iniciar el juego, ¿es el usuario capaz de personalizar volumen y velocidad del audio? ¿Se pueden configurar las teclas, atajos de teclado, controles o sonidos antes de empezar? ¿Es el inicio directo y simple?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Preajuste de accesibilidad visual}: Deben haber diseñados unos preajustes automáticos con medidas ligadas a usuarios con discapacidad visual (paletas de colores, deshabilitar procesamiento gráfico, alto constraste, etc.). \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Volúmenes}: Se categorizarán los distintos tipos de sonido del juego para configurar sus volúmenes de forma independiente \cite{LibroBlancoAccesibilidad}. Se debe permitir desactivar el sonido de fondo y el sonido de fondo debe ser 20 decibelios más bajo que el sonido principal \cite{WebContentAccessibility}.
+\end{itemize}
+\textbf{H5 Secuencia lógica}: Proporcione menús que sigan una secuencia lógica. Eso incluye un lenguaje natural, evitar tecnicismos y mostrar la información de manera coherente. \cite{araujoMobileAudioGames2017a} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿El usuario puede acceder rápidamente a las opciones? ¿Es el menú fácil de entender y utilizar? ¿Permite el juego interactuar con el menú mediante un lector de pantalla? ¿Se presentan primero las opciones más importantes? ¿Siguen los menús, opciones e interfaces estándares de la industria de los videojuegos? ¿Son los conceptos presentados en el audiojuego comprensibles? ¿Se pueden alcanzar todas las opciones en tres opciones de menú o menos?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Lector de pantalla}: Existen APIs que interpretan el texto y lo reproducen en audio. Se pueden también doblar los textos con actores de doblaje. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Personalización de la información en pantalla (HUD)}: Se deben contemplar los elementos posibles y las variantes disponibles para que el usuario pueda adaptarlo mediante el menú de opciones. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Texto predictivo}: Se debe implementar un sistema predictivo de texto y su correspondiente diccionario para obtener palabras completas a partir de las letras iniciales, asistiendo la escritura. \cite{LibroBlancoAccesibilidad}
+\end{itemize}
+\textbf{H6 Patrones de navegación}: Utilizar patrones de navegación por pantalla para facilitar la navegación. \cite{araujoMobileAudioGames2017a} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Hay coherencia en la interfaz gráfica a lo largo del juego? ¿Puede el juego iniciarse sin requerir en primer lugar el lector de pantalla? ¿El juego permite el uso de un lector de pantalla?  En caso de utilizar un lector de pantalla, ¿se puede acceder a la información? ¿La información es accesible? La navegación por el menú, ¿está estandarizada?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Alternativa al color}: El color no se utiliza como la única forma visual de transmitir información, indicar una acción, mostrar una respuesta o distinguir un elemento visual \cite{WebContentAccessibility}. Cualquier elemento que muestre información a través del color debe indicarlo de forma alternativa (cambio del tipo de sonido o descripciones). \cite{LibroBlancoAccesibilidad} 
+\end{itemize}
+ \textbf{H7 Funciones táctiles y de vibración}: Incluir funciones de interfaces hápticas, como funciones táctiles y de vibración. \cite{darinPrinciplesEvaluatingUsability2019} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+ \textbf{Preguntas:}
+ \begin{itemize}
+ 	\item Las respuestas hápticas, ¿son coherentes con la jugabilidad? ¿Se pueden configurar las vibraciones? ¿Hay interfaces alternativas a las funciones táctiles que ofrezcan la misma información en caso de desactivarse? ¿Se reconoce el significado de las respuestas hápticas?
+ \end{itemize}
+ \textbf{Técnicas:}
+ \begin{itemize}
+ 	\item \textbf{Notificaciones hápticas}: Notificaciones complementarias a los sonidos o avisos visuales, se debe controlar la intensidad, ritmo y duración para representar distintos elementos del juego. \cite{LibroBlancoAccesibilidad}
+ \end{itemize}
+  \textbf{H8 Autoguardado}: habilitar mecanismos para guardar automáticamente el estado actual del juego. \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item En caso de implementar autoguardado, ¿guarda el juego el estado en lugares señalizados? ¿Es posible orientarse tras cargar un autoguardado? ¿Se informa al jugador de que se ha guardado su progreso? ¿Se puede guardar manualmente en caso de que eso proporcionara mejor accesibilidad? ¿Se le informa al jugador sobre el sistema de guardado?
+\end{itemize}
+\textbf{H9 Interacción con el entorno}: permitir que el jugador cause un impacto en el mundo del juego y sea capaz de percibirlo, independientemente de si tiene discapacidad visual. El jugador debería sentirse en control del audiojuego. \cite{keilSoundsEngagingInvestigating2025} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+\item ¿El mundo del juego reacciona ante el jugador y recuerda su paso por él, siendo percibido por el jugador, incluidos aquellos con discapacidad visual? ¿Son claros los objetivos del juego para los jugadores? ¿Tienen los jugadores la sensación de controlar e influir en el mundo del juego, dado que todas las acciones proporcionan una respuesta inmediata? ¿Puede el usuario mover o seleccionar los objetos en la pantalla? ¿El juego proporciona una respuesta adecuada a los usuarios y reacciona de forma coherente, inmediata, estimulante y emocionante a las acciones de los jugadores? ¿Perite el juego al jugador tomar decisiones que impacten a la narrativa?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+\item \textbf{Eventos en cinemáticas}: Diseñar las secuencias interactivas en cinemáticas en la misma zona de la pantalla para no buscarlas con la vista cuando aparecen. \cite{LibroBlancoAccesibilidad} 
+\end{itemize}
+\begin{center}
+	\centering
+	\textbf{ENTRADA DE DATOS/SOFTWARE Y HARDWARE}
+\end{center}
+  \textbf{H10 Sensibilidad y tiempo de acción}: Proporcionar un medio para establecer características dependientes del tiempo, como la sensibilidad y la velocidad de los eventos, los movimientos y las acciones del juego. \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{WebContentAccessibility} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+ \textbf{Preguntas:}
+ \begin{itemize}
+ 	\item ¿Permite el juego un uso eficiente por distintos perfiles de usuario? ¿Son las secuencias de acciones y controles sensibles de tiempo personalizables o reemplazables? ¿Son dichas secuencias necesarias, su uso tiene sentido en el contexto del juego? ¿Evita el juego secuencias dependientes de reacciones inmediatas inevitables con consecuencias negativas en caso de fallo? ¿Son los eventos temporizados necesarios o esenciales o por el contrario se pueden evitar? ¿Evita el juego el uso simultáneo de múltiples teclas?
+ \end{itemize}
+ \textbf{Técnicas:}
+ \begin{itemize}
+ 	\item \textbf{Efectos repetidos}: Debe permitir desactivar efectos repetitivos como rayos o luces estroboscópicas con las opciones pertinentes en el menú de accesibilidad. \cite{WebContentAccessibility} \cite{LibroBlancoAccesibilidad}
+ 	\item \textbf{Eventos de respuesta rápida}: Ralentiza o detiene la acción para permitir una respuesta en cámara lenta. Debe haber botones que controlen el tiempo, ralentizándolo en el momento que esté activado. \cite{LibroBlancoAccesibilidad} 
+ \end{itemize}
+  \textbf{H11 Dispositivos de entrada}: Permitir el uso de diferentes dispositivos de entrada y asegurar que los controles y comandos del juego se puedan cambiar o reconfigurar, permitiendo que sean lo más sencillos posible. \cite{teixeiraborgesImBlindCan2017}  \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Ofrece el juego soporte para distintos dispositivos de entrada? ¿Son los controles personalizables? ¿Son los controles necesarios o se pueden simplificar? ¿Se permite a los usuarios presionar las teclas, el ratón u otros dispositivos de entrada a la velocidad que se adapta a sus necesidades? ¿Las teclas tienen una sola función específica? ¿Se le informa al usuario si no es el caso o si cambia esa circunstancia?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Evitar el ratón}: Cuando sea posible, todas las funcionalidades del juego deberían ser accesibles a través de una interfaz de teclado, sin esperar temporización específica para pulsar teclas individuales, a no ser que se requiera entrada que dependa del recorrido del usuario y no solo el destino y el inicio. \cite{WebContentAccessibility}
+\end{itemize}
+  \textbf{H12 Teclas simultáneas y especiales}: Proporcionar el uso de teclas, botones o gestos de forma cohesionada, evitando combinaciones poco utilizadas en los patrones de juego. \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Son las secuencias de atajos de teclado fáciles de utilizar? ¿Son las combinaciones de teclas/botones utilizadas simultáneamente apropiadas? ¿Son los atajos de teclado/combinaciones de botones necesarios?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Personalización de atajos}: Si un atajo está implementado usando solo letras, puntuación, símbolos o números debe haber un mecanismo para apagarlo o para modificarlo para incluir otras teclas no imprimibles (Ctrl, Alt, etc.). \cite{WebContentAccessibility}
+\end{itemize}
+  \textbf{H13 Recursos de tecnología de asistencia}: Adaptar el juego al posible uso de tecnologías de asistencia, como el control por voz, teclados ampliados, interfaz cerebro-ordenador, lectores de pantalla, lupas virtuales, etc. \cite{nesteriukAudiogamesAccessibilityInclusion2018a} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Tiene el juego en cuenta la existencia de controles por voz de forma que sus retos no se ven negativamente afectados? ¿Es el uso de tecnologías de asistencia, como lupas virtuales, un factor que afecta a la jugabilidad? ¿Se ha revisado la compatibilidad con teclados ampliados, lectores de pantalla u otras interfaces? ¿Puede el juego jugarse sin elementos de accesibilidad especializados (lectores braille, interfaces de asistencia, etc.) en caso de que el jugador no pudiera permitírselos?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Iconos representativos}: Los iconos deben ser identificativos y simples. \cite{LibroBlancoAccesibilidad}
+	\item \textbf{Lupa de pantalla}: Aumenta una sección de la pantalla, mediante una cámara adicional que permita visualizar un aumento concreto. Requiere de un botón para activar dicha ampliación. \cite{LibroBlancoAccesibilidad} 
+\end{itemize}
+\textbf{H14 Conflicto entre sonidos}: Evitar conflictos entre la información sonora emitida por el juego esencial y no esencial \cite{EN301549-2021} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Se ha probado el audiojuego con las herramientas de accesibilidad que emiten sonido para comprobar su compatibilidad? ¿Se ha comprobado que ningún sonido esencial es interrumpido al mismo tiempo por otro no esencial durante el juego?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Texto a voz (multijugador)}: Voces digitales para interpretar el texto que aparece en pantalla, incluido en el chat de juego para escuchar los mensajes recibidos.  \cite{LibroBlancoAccesibilidad} 
+\end{itemize}
+\textbf{H15 Comandos de voz}: Cuando se utilicen comandos de voz, emplear palabras individuales de un vocabulario reducido, por ejemplo: «Sí», «No», «Salir», «Abrir», «Saltar», «Guardar», etc. Siempre se debe ofrecer una alternativa a los controles por voz. \cite{EN301549-2021} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Son los controles por voz sencillos? ¿Son los controles por voz necesarios? ¿Funcionan correctamente en caso de tener otras tecnologías de asistencia? 
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Voz a texto (multijugador)}: Posibilitar el dictado por voz en caso de requerir entrada de texto, a través de una API o desarrollándolo para el juego. Permite también redactar mensajes por chat multijugador. \cite{LibroBlancoAccesibilidad}
+\end{itemize}
+\begin{center}
+	\centering
+	\textbf{INSTALACIÓN/CONFIGURACIÓN/AYUDA}
+\end{center}
+\textbf{H16  Emisión de comentarios inmediatos}: enviar comentarios inmediatos según las acciones del jugador, para que este sepa que sus acciones se están procesando, como informar al jugador sobre las entradas de datos, la necesidad de cerrar la ventana de diálogo, etc. Indique claramente la existencia de elementos visuales interactivos, utilizando elementos sonoros para describirlos. Indique al usuario su foco en los menús interactivos. \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{WebContentAccessibility} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Mantiene el audiojuego informado al usuario sobre los comandos que selecciona? ¿Es posible orientarse por la interfaz a través de sonidos? ¿Están los comandos seguidos de un sonido significativo que los identifican? ¿Se envían consejos y recordatorios dependiendo del contexto para ayudar en casos de dificultad? ¿Es posible saber el foco del teclado o mando en la interfaz de los menús?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Modo copiloto}: Permitir que otra persona, con otro mando, pueda jugar asistiendo al usuario o dividiendo las tareas. Dos fuentes de control simultáneas sobre el mismo personaje. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Anticaídas}: Incorporar barreras para evitar caídas del jugador. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Realización de acciones automáticas}: Permite recoger elementos, objetos o realizar acciones de forma automática, mediante botones o proximidad.\cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Recorrido simplificado}: Simplifica la interacción con el juego para reducir el número de controles posibles al mínimo. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Auto apuntado}: Apunta automáticamente al enemigo más cercano respecto a la posición del jugador. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Fijar objetivo}: Similar a auto apuntado, pero no fija automáticamente al enemigo más cercano, sino el más cercano a la retícula de apuntado. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Monturas, transportes y movimientos automáticos}: Si estos elementos están incluidos en el juego, se debe implementar un sistema de asistencia que permita ir de un punto a otro de forma automática. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Puntería asistida}: Asistencia que influye en la trayectoria del proyectil para alcanzar a los objetivos.  \cite{LibroBlancoAccesibilidad} 
+\end{itemize}
+\textbf{H17 Corrección de errores}:  El audiojuego debería prevenir al usuario de cometer errores. Incluya mecanismos que proporcionen corrección de errores, como permitir al jugador volver a un punto seguro del juego, proporcionar mensajes que indiquen claramente el motivo del error, etc. \cite{urbanekSoundBananasRules2018} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item  ¿Es posible retornar a un guardado previo en caso de que el autoguardado sea defectuoso? ¿Puede el usuario identificar cuando una opción de menú está desactivada? ¿El audiojuego desactiva las teclas que no se usan en el juego? ¿Cuando el usuario selecciona la opción de salir del juego se le pide confirmación? ¿Desactiva el juego opciones que no debería usar el jugador en momentos específicos del juego? ¿Puede el usuario rehacer un error? ¿El audiojuego le indica cómo salir de un estado no deseado? ¿Es fácil saber cuándo se produce un error? ¿Es fácil saber por qué se produjo un error? ¿Evita el juego la interferencia de los sonidos de error con el resto del audio del juego? ¿Se evita que los sonidos que identifican los errores sean ruidosos o desagradables?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Confirmación}: Se pide confirmación para revisar y corregir la información introducida en el juego cuando sea posible y adecuado \cite{WebContentAccessibility}.
+	\item \textbf{Identificación de errores}: Cuando se comete un error de entrada, la salida auditiva debe identificar y describir el error al jugador. \cite{EN301549-2021}
+\end{itemize}
+\textbf{H18 Manual e información}: Proporcionar manuales e instrucciones de instalación y mecanismos de configuración del juego y proporcionar información sobre cómo jugar e interactuar en el juego mediante una presentación inicial de la mecánica del juego de forma didáctica. Esta explicación debe incluir qué teclas utilizar y cómo interpretar los sonidos del juego. \cite{keilSoundsEngagingInvestigating2025} \cite{araujoMobileAudioGames2017a} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{teixeiraborgesFairPlayGuidelines2018a} \cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item  Al iniciar el juego, ¿el usuario dispone de suficiente información para comprenderlo? ¿El usuario recibe información de ayuda acorde con el contexto en el que se encuentra dentro del juego? ¿Se presentan primero las opciones más importantes? ¿El juego presenta adecuadamente sus objetivos? ¿Mantiene el audiojuego informado al usuario sobre lo que ocurre? ¿Se ofrecen instrucciones de uso o instalación? ¿Se proporcionan atajos de teclado documentados para interactuar con las opciones del juego (como guardar, salir, pausar, etc.)? ¿El juego ofrece un tutorial para presentar todos los controles generales necesarios para avanzar en el juego, a través de una serie de pequeñas tareas? Si no lo ofrece, ¿permite un modo de juego \say{libre} que deje al jugador aprender sobre el funcionamiento del juego? ¿Evita el juego explicaciones largas exclusivamente auditivas? ¿Se ofrecen enseñanzas específicas sobre mecánicas exclusivamente auditivas?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Duración de la notificación}: Modificar el tiempo en el que una notificación se muestra en pantalla. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Notificaciones sonoras}: Notificaciones sonoras complementarias y equivalentes a las mostradas en pantalla. \cite{LibroBlancoAccesibilidad} 
+\end{itemize}
+\textbf{H19 Características de accesibilidad}: Indicar explícitamente en las descripciones del juego que está diseñado para su uso por personas con discapacidad visual y con qué herramientas es compatible. \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item  ¿Es consciente el usuario de la compatibilidad (o su ausencia) de sus tecnologías de asistencia con el juego? ¿Está especificado en la descripción del juego que se trata de un producto accesible? ¿Se indica para qué publico está preparado?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Aviso al inicio del juego}: Es necesario informar al jugador antes de empezar el juego de las opciones de accesibilidad o su ausencia. Esta información debe estar en las plataformas en las que se distribuye el juego. \cite{araujoMobileAudioGames2017a}
+\end{itemize}
+\begin{center}
+	\centering
+	\textbf{ELEMENTOS SONOROS}
+\end{center}
+\textbf{H20 Mecanismos de sonido interactivos}: Utilizar sonidos dinámicos, pistas de audio y efectos de sonido como sonido 3D, grabación binaural, sonido envolvente, mapa de audio estilo sonar, etc., de forma divertida y entretenida. \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item   ¿Los efectos de audio generan interés? ¿Los efectos de vibración generan interés? ¿El usuario se involucra gracias a los efectos de sonido en el mundo del juego?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Audio 3D}: Efecto de sonido que consigue posicionar tridimensionalmente el audio del juego. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Mapeo por altitud}: el tono de un objeto se elige según su altitud. \cite{agrimiGameAccessibilityVisually2024}
+	\item \textbf{Asignación de altitud relativa sin signo}: El tono es más alto cuanto más se acerque a la altitud del objetivo. Se tiene en cuenta la elevación propia y la del objetivo para esta sonificación. \cite{agrimiGameAccessibilityVisually2024}
+\end{itemize}
+\textbf{H21 Sonido diferente para cada evento}: permita que los objetos y el escenario del juego se reconozcan por el sonido o música, proporcionando retroalimentación sonora para las acciones del jugador. \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item  ¿Los controles y sonidos se mantienen coherentes a lo largo del juego?  ¿Los efectos de audio son significativos? ¿Tienen coherencia los sonidos con el objeto que representan? ¿Ayudan los efectos de sonido a la orientación del jugador? ¿Son las acciones reconocibles por el sonido que producen? ¿Utiliza el juego sonido estéreo, binaural o envolvente para localizar los elementos?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Idioma}: Configurar el idioma de voces o subtítulos, mediante hojas de cálculo o similares. \cite{LibroBlancoAccesibilidad} 
+\end{itemize}
+\textbf{H22 Configuración de sonido y audio}: proporcionar mecanismos para configurar los audios y sonidos del juego, como narrativas y ruidos ambientales, incluida la posibilidad de silenciarlos y/o desactivarlos, activarlos, controlar su duración, voces y volumen de los sonidos, de forma individual. \cite{urbanekSoundBananasRules2018} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite[p~24]{EN301549-2021}  \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Se pueden configurar los volúmenes de los sonidos separadamente? ¿Se pueden desactivar los sonidos no esenciales? ¿Se puede controlar la velocidad de la narración? ¿Se pueden repetir los sonidos esenciales (diálogos, descripciones, etc.)? ¿Tienen los volúmenes de los sonidos un equilibrio entre ellos, o la diferencia entre ellos facilita la confusión?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Pausar mensajes verbalizados}: Si el usuario tiene implementada un lector de pantalla, debe permitirse detener el mensaje verbalizado mediante un gesto o botón \cite{LibroBlancoAccesibilidad}. Si el mensaje se reproduce por más de 3 segundos debe haber un mecanismo que permita pararlo o que permita variar el volumen independientemente del nivel de volumen del sistema \cite{WebContentAccessibility}.
+	\item \textbf{Repetir último mensaje}: Habilitar un botón que permita recuperar la última frase, o implementar controles para retroceder o avanzar el diálogo. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Percepción de volumen de los objetos}: Añadir a los objetos \textit{colliders}, con formas determinadas para ayudar a percibir el volumen de los elementos. \cite{LibroBlancoAccesibilidad}
+\end{itemize}
+\begin{center}
+	\centering
+	\textbf{ELEMENTOS GRÁFICOS}
+\end{center}
+\textbf{H23 Configuración gráfica}: Proporcione opciones de configuración gráfica, como desactivar los gráficos 3D, habilitar la personalización del color, el brillo y el contraste \cite{araujoMobileAudioGames2017a} \cite{WebContentAccessibility} \cite{teixeiraborgesFairPlayGuidelines2018a} \\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item En caso de tener interfaz gráfica, ¿es posible personalizar los colores (en caso de daltonismo o problemas con el contraste)? ¿Es la fuente personalizable por una más accesible? ¿Es posible realizar configuración a los gráficos 3D? ¿Se permite desactivar las vibraciones de pantalla? ¿Es posible desactivar los fondos para permitir un mayor contraste?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Reducción de desenfoques}: Incluir mecanismos para eliminar, desactivar o reducir desenfoques. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Reducción de temblores de cámara}: Incluir mecanismos para eliminar, desactivar o reducir temblores.\cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Deshabilitar procesamiento gráfico}: Mediante ajustes de resolución, calidad de texturas y sombreado, o evitando el uso de tarjeta gráfica o pantalla. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Personalización de colores}: Crear paletas de colores para interfaz y otros elementos como ajustes para personas daltónicas. \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Posicionamiento de la cámara}: Ajusta la cámara mediante un botón o una espera (automático). \cite{LibroBlancoAccesibilidad} 
+	\item \textbf{Alto contraste}: Diferencia entre claros y oscuros en los elementos del juego, cambiar color de objetos importantes o enemigos, modificar los materiales asignados a cada elemento según las opciones seleccionadas \cite{LibroBlancoAccesibilidad}. 
+\end{itemize}
+\textbf{H24 Elementos textuales}: Proporcione opciones de configuración gráfica relativos al tamaño del texto, su contraste y la fuente. Permita accesibilidad en los textos del juego evitando imágenes innecesarias. \cite{WebContentAccessibility} \\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Es la fuente personalizable por una más accesible? ¿Es el tamaño del texto personalizable? ¿Es posible añadir fondo a los subtítulos en caso de necesitarlo? ¿Cumple el juego el mínimo de contraste en texto menor de 18pt (4.5:1)? ¿Cumple para texto grande (mayor de 18pt) el contraste de 3:1? ¿Las imágenes con texto son puramente decorativas? ¿Es el texto esencial detectable como texto? ¿Tiene el texto del juego espaciado adecuado (entre líneas 1,5 veces el tamaño de la fuente, entre párrafos 2 veces el tamaño de fuente, entre letras 0,12 veces el tamaño de fuente y entre palabras 0,16 veces el tamaño de fuente)?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Tamaño de la letra}: Configurar el tamaño de letra en menús o configuraciones. Se considera el color de fondo y de letra para mayor contraste \cite{LibroBlancoAccesibilidad}. No se debe perder funcionalidad a partir de este reescalado \cite{WebContentAccessibility}.
+	\item \textbf{Alto contraste en texto}: Para alto contraste, se debe cumplir una proporción de 7:1 en texto e imágenes con texto, y 4,5:1 en texto grande (mayor de 18pt) \cite{WebContentAccessibility}.
+\end{itemize}
+\textbf{H25 Elementos repetitivos}:  Evitar animaciones y elementos visuales repetitivos como única fuente de información, diversificando las alertas visuales y sonoras. \cite{darinPrinciplesEvaluatingUsability2019} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Es relevante la información que se presenta al usuario? ¿Se utilizan distintos tipos de sonidos? ¿Son reconocibles los sonidos en el juego?
+\end{itemize}
+\textbf{H26 Vídeos y cinemáticas}: Las cinemáticas y los vídeos deben estar correctamente descritos, adaptados y simplificados para evitar confusión. \cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025}\\
+\textbf{Preguntas:}
+\begin{itemize}
+	\item ¿Son los vídeos informativos de 20 minutos o menos? ¿Son los efectos de slow y fast motion evitados? Cuando cambian las escenas, ¿se explican los cambios en las descripciones auditivas y textuales?
+\end{itemize}
+\textbf{Técnicas:}
+\begin{itemize}
+	\item \textbf{Audiodescripciones}: Incluir descripciones en cinemáticas o acciones, si hay descripciones textuales hay que incluir audio que las describa. \cite{LibroBlancoAccesibilidad} 
+\end{itemize}
+ 
+ 
+ \subsection{Audiojuegos}
+ En esta sección se realizará un estudio breve de otros trabajos en el área de los audiojuegos accesibles en entornos académicos, como conferencias o revistas, así como otros proyectos para comprobar sus conclusiones y los problemas encontrados en el desarrollo de los mismos. Estos trabajos presentan desarrollo de audiojuegos pero no ofrecen una lista de heurísticas de evaluación complementaria. A través de los resultados de estos trabajos, se pueden identificar los potenciales problemas de desarrollo que se encontrarán en la propuesta y las opciones de accesibilidad más solicitadas en las encuestas con usuarios finales. Además, se relacionan estos desafíos con las heurísticas de la sección anterior. \\
+ 
+\subsubsection{GBraille}
+\textit{GBraille} es un entorno de aprendizaje de Braille a través de audiojuegos de móvil. Está compuesto por varios minijuegos que utilizan gestos en la pantalla y los botones de los teléfonos inteligentes para escribir caracteres braille. La evaluación de estos audiojuegos a nivel de accesibilidad se realizó con usuarios ciegos y educadores especiales con experiencia en la enseñanza de Braille. Los cuestionarios no se basaron en heurísticas para audiojuegos accesibles, sino que se realizaron considerando el modelo ACRS de John Keller, Kirkpatrick \cite[p ~235]{araujoDesignUsabilityBraillebased2016}. \\
+
+En la evaluación con usuarios con discapacidad visual, se encontraron algunas limitaciones respecto al diseño de los audiojuegos. A pesar de que los juegos se consideraron divertidos y educativos, fallaron en cuestiones consideradas en las heurísticas previamente redactadas, como la falta de tutoriales (H18) o la accesibilidad deficiente en los menús (H5, H16). Además, en el minijuego \textit{\say{GBraille Asteroids Results}} algunos usuarios encontraron problemas por la ausencia de explicación del entorno del juego (H18) y la inadecuación de la velocidad de los elementos interactivos (H10). Los educadores especiales, por su parte, encontraron necesario un tutorial (H18) y niveles de dificultad variables (H3) \cite{araujoDesignUsabilityBraillebased2016}. \\
+
+Estos juegos fueron considerados por los educadores como herramientas válidas para el estudio de Braille \cite[p ~238]{araujoDesignUsabilityBraillebased2016} y los problemas presentados en el momento de utilizar los audiojuegos se podrían haber prevenido con su consideración en la fase de diseño a través de guías de accesibilidad. \\
+
+\subsubsection{Murky shooting}
+\textit{Murky shooting} es un \textit{shooter} con una interfaz auditiva para orientar al jugador en sus mecánicas. Utiliza técnicas accesibles en su desarrollo como la munición infinita y distintos niveles de dificultad (H3) aunque el foco del juego no fuera ser accesible universalmente. Realiza una evaluación de la jugabilidad con usuarios sin discapacidad visual, para comprobar el efecto de la sonificación en la inmersión y las consecuencias de elegir distintos tipos de consola o sonificación.
+\cite{cordeiroMurkyShootingUse2012}\\
+
+El uso de sonido como una interfaz principal a través de la cual ofrecer la información necesaria para el jugador fue suficiente para realizar todas las acciones del juego y permitió mayor inmersión para los jugadores, incluso si no tenían ningún tipo de discapacidad visual \cite{cordeiroMurkyShootingUse2012}. Es posible la creación de audiojuegos con interfaces gráficas estéticas que ofrezcan mayor accesibilidad y mantengan el interés de los jugadores al mismo tiempo.\\
+
+\subsubsection{Mudsplat}
+\textit{Mudsplat} es un audiojuego donde el objetivo es alinearse con monstruos que emiten sonidos identificativos y dispararles agua para debilitarlos. Los efectos sonoros y la música van variando a medida que avanza el juego y está disponible en varios idiomas (H21). No posee ninguna interfaz gráfica que se relacione con los sonidos emitidos, así que el jugador debe identificar las mecánicas del juego y las consecuencias de sus acciones a través de los efectos que se escuchan.\\ \cite{audiogamesNewPerspectives}
+
+Al no poseer una interfaz gráfica, se evita la necesidad de coordinar los efectos visuales con los sonoros (H2) así como la necesidad de reducir efectos repetitivos (H25) o gráficos 3D (H20). El juego demuestra la posibilidad de conseguir accesibilidad a través de la sonificación completa de la jugabilidad.\\
+
+\subsubsection{Phansound}
+\textit{Phansound} es un audiojuego desarrollado para la plataforma iOS para personas videntes y con discapacidad visual. Tras el desarrollo del juego, se realizaron encuestas de usabilidad a usuarios de ambos tipos. El juego utiliza herramientas de accesibilidad disponibles en iPhone a través de VoiceOver (H13) y sonido 3D (H20). \cite{tausPhanSoundEntertainmentAudiogame2023b}\\
+
+Uno de los principales problemas encontrados en las encuestas, es que el tutorial, aunque presente, no aparecía al inicio del juego (H4 y H18). Además el sonido de paso de nivel generaba confusión y no denotaba el éxito claramente y los sonidos que indicaban arriba y abajo causaron algunas dudas en los jugadores (H21). \cite[p ~5]{tausPhanSoundEntertainmentAudiogame2023b}\\
+
+Entre las conclusiones de accesibilidad derivadas del desarrollo del estudio, se consideran algunas características de accesibilidad ausentes que se corresponden con las heurísticas desarrolladas, como la modificación de la velocidad de los sonidos (H4 y H10), el cambio de los gestos en la navegación de los menús según las expectativas de los jugadores (H2) y el fomento de la rejugabilidad (H2).\\
+
+\subsubsection{Soundmaze}
+\textit{Soundmaze} es un audiojuego de exploración desarrollado para Android en el que los jugadores recorren laberintos con paredes y pasillos para poder resolverlos. Utiliza gestos simples en el móvil para la navegación, pidiendo confirmación (H17) de las acciones después de emitir un mensaje identificándolas (H18). Además, el juego tiene un inicio rápido (H4) con un tutorial auditivo que explica al jugador cómo funcionan las mecánicas (H18).\cite{avilaSoundmazeDesenvolvimentoUm2020}\\
+
+Los principales problemas detectados son la falta de claridad de sonido así como su volumen (H22) y algunos sonidos que, al ser innecesarios, causaban confusión en los usuarios (H21). Además los jugadores echaban de menos elementos inmersivos (H2) y niveles de dificultad (H3) \cite[p ~498]{avilaSoundmazeDesenvolvimentoUm2020}.\\
+
+\subsubsection{Virtual Stage}
+\textit{Virtual Stage} es un audiojuego musical que reproduce los instrumentos de una banda en diferentes pistas, localizadas alrededor del jugador utilizando sonido 3D (H20), para que elija uno de ellos moviéndose físicamente hacia la fuente de la música. \\
+
+Esta forma de navegación requería de una gran cantidad de movimiento de parte de los jugadores, llevándolos a desorientarse en el mundo real. Además, el juego no identifica correctamente si un sonido está delante o detrás del usuario, permitiendo que un jugador avanzara en dirección contraria a la fuente del sonido \cite[p~6]{deoliveiraVirtualStageImmersive2015a}. \\
+
+\section{Conclusiones}
+En los últimos años se han puesto en vigor múltiples legislaciones que regulan los criterios a seguir para el desarrollo tecnológico accesible y universal, estandarizando los requisitos que los productos y servicios en Europa y España deben cumplir para su comercialización y distribución. Esto aclara las expectativas que deben seguir las empresas a la hora de conseguir pliegos o diseñar productos para el público general y favorece la creación de herramientas que faciliten el desarrollo accesible. Aunque no son las primeras de su género, es una materia que está tomando más peso institucional y desarrollar trabajos en esta dirección, ya no solo en accesibilidad para personas con discapacidad visual sino también para otro tipo de limitaciones sensoriales y cognitivas, es de actualidad y permite cumplir con los objetivos de las distintas organizaciones y entidades gubernamentales. \\
+
+En materia de heurísticas, los trabajos en este área son escasos e infrecuentes, muchas veces desarrollados por los mismos autores o derivados de la misma fuente. La mayoría de los estudios recientes tienen una cantidad de referencias menor a 30 y no discuten sus limitaciones, como las muestras reducidas en las encuestas o los sesgos que pudiera haber en ellas. Las heurísticas desarrolladas en este trabajo no son sino un resumen de la literatura redactada en la última década, condensada en una lista para su futura posible referencia. En este trabajo se desarrolla un audiojuego que tendrá en consideración las heurísticas mencionadas anteriormente como forma de evaluación de la utilización y accesibilidad.\\
+
+Por último, los audiojuegos revisados son trabajos desarrollados en ámbitos académicos mayoritariamente y de diferentes épocas, marcos temporales y presupuestos. Ninguno de ellos se consideraría un videojuego profesional desarrollado con el propósito de obtener remuneración y por un estudio especializado. Por lo tanto es posible que los problemas analizados en estos proyectos sean resultado de la falta de tiempo de desarrollo, presupuesto o mano de obra y no una falta de recursos disponibles para crear audiojuegos accesibles. Se puede concluir, no obstante, que estos problemas de accesibilidad universal se consideraban en los trabajos y que son relevantes para el presente estudio. \\
+
+La evaluación de los audiojuegos a través del público objetivo resultó en retroalimentación valiosa en todos los trabajos analizados, así que es una parte crucial para asegurar accesibilidad universal el incluir a personas con discapacidad en el desarrollo del audiojuego para orientarlo correctamente si fuera posible.
+
