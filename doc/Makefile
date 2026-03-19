@@ -7,7 +7,7 @@ doc: $(DOC:.tex=.pdf)
 all: main.pdf
 
 %.pdf: %.tex FORCE
-	pdflatex $< && bibtex $* && pdflatex $< && pdflatex $<
+	pdflatex $< && biber $* && pdflatex $< && pdflatex $<
 
 FORCE: 
 
