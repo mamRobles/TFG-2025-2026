@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://cnsmp38is7h5a"]
+
+[ext_resource type="Script" uid="uid://bjanxk342is7" path="res://Inicio/Menú/Scripts/MDI.gd" id="1_jos5t"]
+[ext_resource type="Script" uid="uid://nlaesyg17p64" path="res://Inicio/Menú/Scripts/MDI_inicioBoton.gd" id="1_nllc3"]
+[ext_resource type="Script" uid="uid://bslirxydkmj7t" path="res://Inicio/Menú/Scripts/MDI_opcionesBoton.gd" id="3_g8mt1"]
+[ext_resource type="Script" uid="uid://cfwxy1eer5rrr" path="res://Inicio/Menú/Scripts/MDI_salirBoton.gd" id="4_y21vx"]
+[ext_resource type="Script" uid="uid://b35j1goneq45g" path="res://Inicio/Menú/Scripts/MDI_confirmacionSalir.gd" id="5_7ltmr"]
+[ext_resource type="Script" uid="uid://b1dkd6aq52qy2" path="res://Inicio/Menú/Scripts/MDI_confirmacionBotonSi.gd" id="6_gj77t"]
+[ext_resource type="Script" uid="uid://bbc0m3bwwoyfo" path="res://Inicio/Menú/Scripts/MDI_confirmacionBotonNo.gd" id="7_gj77t"]
+
+[node name="Control" type="Control" unique_id=1092603923]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 3
+script = ExtResource("1_jos5t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1031983941]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -79.0
+offset_right = 100.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inicio" type="Button" parent="VBoxContainer" unique_id=554905406]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../Salir")
+focus_neighbor_top = NodePath("../Salir")
+focus_neighbor_right = NodePath("../Opciones")
+focus_neighbor_bottom = NodePath("../Opciones")
+focus_next = NodePath("../Opciones")
+focus_previous = NodePath("../Salir")
+text = "Inicio"
+script = ExtResource("1_nllc3")
+
+[node name="Opciones" type="Button" parent="VBoxContainer" unique_id=530817885]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../Inicio")
+focus_neighbor_top = NodePath("../Inicio")
+focus_neighbor_right = NodePath("../Salir")
+focus_neighbor_bottom = NodePath("../Salir")
+focus_next = NodePath("../Salir")
+focus_previous = NodePath("../Inicio")
+text = "Opciones"
+script = ExtResource("3_g8mt1")
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=967306053]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../Opciones")
+focus_neighbor_top = NodePath("../Opciones")
+focus_neighbor_right = NodePath("../Inicio")
+focus_neighbor_bottom = NodePath("../Inicio")
+focus_next = NodePath("../Inicio")
+focus_previous = NodePath("../Opciones")
+text = "Salir"
+script = ExtResource("4_y21vx")
+
+[node name="Confirmación Salir" type="PanelContainer" parent="." unique_id=799541187]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -46.0
+offset_right = 200.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+focus_behavior_recursive = 2
+script = ExtResource("5_7ltmr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Confirmación Salir" unique_id=192756041]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Confirmación Salir/VBoxContainer" unique_id=376063809]
+layout_mode = 2
+text = "¿Seguro que quiere salir?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Confirmación Salir/VBoxContainer" unique_id=576473575]
+layout_mode = 2
+
+[node name="Si" type="Button" parent="Confirmación Salir/VBoxContainer/VBoxContainer2" unique_id=1168680793]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../No")
+focus_neighbor_top = NodePath("../No")
+focus_neighbor_right = NodePath("../No")
+focus_neighbor_bottom = NodePath("../No")
+focus_next = NodePath("../No")
+focus_previous = NodePath("../No")
+text = "Salir del juego"
+script = ExtResource("6_gj77t")
+
+[node name="No" type="Button" parent="Confirmación Salir/VBoxContainer/VBoxContainer2" unique_id=1055212907]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Si")
+focus_neighbor_top = NodePath("../Si")
+focus_neighbor_right = NodePath("../Si")
+focus_neighbor_bottom = NodePath("../Si")
+focus_next = NodePath("../Si")
+focus_previous = NodePath("../Si")
+text = "Volver al inicio"
+script = ExtResource("7_gj77t")
+
+[node name="TTS" type="AudioStreamPlayer2D" parent="." unique_id=1667310700]
+unique_name_in_owner = true
+bus = &"bus_TTS"
+
+[connection signal="focus_entered" from="VBoxContainer/Inicio" to="VBoxContainer/Inicio" method="_on_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/Inicio" to="VBoxContainer/Inicio" method="_on_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Opciones" to="VBoxContainer/Opciones" method="_on_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/Opciones" to="VBoxContainer/Opciones" method="_on_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Salir" to="VBoxContainer/Salir" method="_on_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="VBoxContainer/Salir" method="_on_pressed"]
+[connection signal="visibility_changed" from="Confirmación Salir" to="Confirmación Salir" method="_on_visibility_changed"]
+[connection signal="focus_entered" from="Confirmación Salir/VBoxContainer/VBoxContainer2/Si" to="Confirmación Salir/VBoxContainer/VBoxContainer2/Si" method="_on_focus_entered"]
+[connection signal="pressed" from="Confirmación Salir/VBoxContainer/VBoxContainer2/Si" to="Confirmación Salir/VBoxContainer/VBoxContainer2/Si" method="_on_pressed"]
+[connection signal="focus_entered" from="Confirmación Salir/VBoxContainer/VBoxContainer2/No" to="Confirmación Salir/VBoxContainer/VBoxContainer2/No" method="_on_focus_entered"]
+[connection signal="pressed" from="Confirmación Salir/VBoxContainer/VBoxContainer2/No" to="Confirmación Salir" method="_on_no_pressed"]
