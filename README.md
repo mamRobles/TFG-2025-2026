@@ -3,6 +3,10 @@
 ### Autora: María del Mar Martínez Robles
 ### Tutor: Antonio Bautista Bailón Morillas
 ___
+En este repositorio no están los sonidos ni las imágenes empleadas
+en el juego, debido a las limitaciones de tamaño y cantidad de
+archivos de la plataforma y problemas con la propiedad intelectual
+de los autores.
 
 La documentación de este proyecto está realizada con `LaTeX`, por lo
 tanto para generar el archivo PDF necesitaremos instalar `TeXLive` en
