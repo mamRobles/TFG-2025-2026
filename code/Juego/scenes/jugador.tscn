@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://b42tshx2eeiga"]
+
+[ext_resource type="Script" uid="uid://dshmi738wyrw" path="res://Juego/Scripts/jugador.gd" id="1_6ywb7"]
+[ext_resource type="Texture2D" uid="uid://7w7dm057pvyx" path="res://Juego/imágenes/toposprite.png" id="2_p4wmo"]
+[ext_resource type="Texture2D" uid="uid://mk83v4ttk8ue" path="res://Juego/imágenes/robosprite.png" id="2_yqt8v"]
+[ext_resource type="AudioStream" uid="uid://4umwbjsk42yj" path="res://Juego/sonidos/pasostopo.wav" id="4_h6av7"]
+[ext_resource type="AudioStream" uid="uid://btpkjv40q265k" path="res://Juego/sonidos/pasosrobot.wav" id="5_h6av7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqt8v"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wll0s"]
+atlas = ExtResource("2_yqt8v")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bae8g"]
+atlas = ExtResource("2_yqt8v")
+region = Rect2(50, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khgf0"]
+atlas = ExtResource("2_yqt8v")
+region = Rect2(25, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8wp1"]
+atlas = ExtResource("2_yqt8v")
+region = Rect2(75, 0, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gct2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wll0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bae8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khgf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8wp1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvkam"]
+atlas = ExtResource("2_p4wmo")
+region = Rect2(75, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6av7"]
+atlas = ExtResource("2_p4wmo")
+region = Rect2(50, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c107p"]
+atlas = ExtResource("2_p4wmo")
+region = Rect2(25, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwf4a"]
+atlas = ExtResource("2_p4wmo")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wll0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvkam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6av7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c107p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwf4a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bae8g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khgf0"]
+size = Vector2(16, 16)
+
+[node name="Jugador" type="CharacterBody2D" unique_id=326356849]
+motion_mode = 1
+script = ExtResource("1_6ywb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1535573642]
+shape = SubResource("RectangleShape2D_yqt8v")
+
+[node name="multijugador" type="AnimatedSprite2D" parent="." unique_id=77716568]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_gct2n")
+
+[node name="singleplayer" type="AnimatedSprite2D" parent="." unique_id=1441727028]
+visible = false
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_wll0s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=723875742]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=404185389]
+shape = SubResource("RectangleShape2D_bae8g")
+
+[node name="paramusica" type="Area2D" parent="." unique_id=190661432]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paramusica" unique_id=1604776279]
+shape = SubResource("RectangleShape2D_khgf0")
+
+[node name="pasos" type="AudioStreamPlayer2D" parent="." unique_id=989730341]
+stream = ExtResource("4_h6av7")
+bus = &"Ambiente_SFX"
+area_mask = 4
+
+[node name="pasosrobot" type="AudioStreamPlayer2D" parent="." unique_id=211996884]
+stream = ExtResource("5_h6av7")
+bus = &"Ambiente_SFX"
+
+[node name="TTS" type="AudioStreamPlayer2D" parent="." unique_id=658884261]
+unique_name_in_owner = true
+bus = &"bus_TTS"

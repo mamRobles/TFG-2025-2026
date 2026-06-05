@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://4lrp48cfgwbo"]
+
+[ext_resource type="Script" uid="uid://bfiq0v20xcrx5" path="res://Juego/Scripts/pesca.gd" id="1_3blfs"]
+[ext_resource type="Texture2D" uid="uid://ds4n4qorde6uw" path="res://Juego/imágenes/pescando.png" id="2_x7ldk"]
+[ext_resource type="AudioStream" uid="uid://c86e1aw7bb4ra" path="res://Juego/sonidos/picapez.wav" id="3_x7ldk"]
+[ext_resource type="AudioStream" uid="uid://b2m856krojxt3" path="res://Juego/sonidos/exito.wav" id="4_8t0j7"]
+[ext_resource type="AudioStream" uid="uid://b4gb78flm45g8" path="res://Juego/sonidos/fracaso.wav" id="5_3xvoa"]
+
+[node name="Pesca" type="Control" unique_id=1966724330]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3blfs")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=122106372]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=721174599]
+layout_mode = 2
+texture = ExtResource("2_x7ldk")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="ruido" type="AudioStreamPlayer2D" parent="." unique_id=1726670466]
+stream = ExtResource("3_x7ldk")
+bus = &"bus_SFX"
+
+[node name="exito" type="AudioStreamPlayer2D" parent="." unique_id=1187682211]
+stream = ExtResource("4_8t0j7")
+bus = &"bus_SFX"
+
+[node name="fracaso" type="AudioStreamPlayer2D" parent="." unique_id=1454414496]
+stream = ExtResource("5_3xvoa")
+bus = &"bus_SFX"
+
+[node name="temporizadorPesca" type="Timer" parent="." unique_id=1324445204]
+wait_time = 1.5
+
+[node name="TTS" type="AudioStreamPlayer2D" parent="." unique_id=1111964007]
+unique_name_in_owner = true
+bus = &"bus_TTS"
+
+[connection signal="esperando" from="." to="." method="_on_esperando"]
+[connection signal="timeout" from="temporizadorPesca" to="." method="_on_temporizador_pesca_timeout"]

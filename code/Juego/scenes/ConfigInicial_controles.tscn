@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cue0i4bl7c88o"]
+
+[ext_resource type="Script" uid="uid://dedhuj3lk6org" path="res://Juego/Scripts/config_inicial_controles.gd" id="1_3vsjt"]
+
+[node name="ConfigInicialControles" type="Control" unique_id=1880870749]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3vsjt")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1261438343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=732337691]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1971146052]
+layout_mode = 2
+text = "Configuración de controles"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=1032963997]
+layout_mode = 2
+columns = 2
+
+[node name="General" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=374429907]
+layout_mode = 2
+text = "TODO"
+
+[node name="generalSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=454673511]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="Siguiente" type="Button" parent="MarginContainer/VBoxContainer" unique_id=995559433]
+layout_mode = 2
+text = "Siguiente"
+
+[node name="Salir" type="Button" parent="MarginContainer/VBoxContainer" unique_id=330389293]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Salir al menú de inicio"
+
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Siguiente" to="." method="_on_siguiente_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Siguiente" to="." method="_on_siguiente_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

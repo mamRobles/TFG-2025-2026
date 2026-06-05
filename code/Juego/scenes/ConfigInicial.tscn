@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://c7fnnqf1tfisb"]
+
+[ext_resource type="Script" uid="uid://cvryuke7cov0j" path="res://Juego/Scripts/config_inicial.gd" id="1_87lnv"]
+[ext_resource type="Script" uid="uid://bwqfdociyxwyc" path="res://Inicio/Menú/Scripts/voces_2.gd" id="2_8w0xg"]
+[ext_resource type="Script" uid="uid://bh5slyrfvq8ax" path="res://Inicio/Menú/Scripts/voces_1.gd" id="3_3bvcn"]
+[ext_resource type="AudioStream" uid="uid://b4gb78flm45g8" path="res://Juego/sonidos/fracaso.wav" id="4_85bev"]
+[ext_resource type="AudioStream" uid="uid://kijmc3vjl5tu" path="res://Juego/sonidos/pruebamusica.wav" id="5_nqaqt"]
+[ext_resource type="AudioStream" uid="uid://dikyreqrvn3xe" path="res://Juego/sonidos/pruebageneral.wav" id="6_qim18"]
+[ext_resource type="AudioStream" uid="uid://yqm5lvk3r8kq" path="res://Juego/sonidos/wavs/test_tts.wav" id="7_nqaqt"]
+
+[node name="ConfigInicial" type="Control" unique_id=1172869741]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87lnv")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=781291007]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=297119693]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=862733696]
+layout_mode = 2
+text = "Configuración de sonido"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=576851035]
+layout_mode = 2
+columns = 2
+
+[node name="General" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=609243037]
+layout_mode = 2
+text = "General"
+
+[node name="generalSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1623391368]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="Música" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=997321654]
+layout_mode = 2
+text = "Música"
+
+[node name="musicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=2096394039]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="SFX" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=742249856]
+layout_mode = 2
+text = "Efectos"
+
+[node name="sfxSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=2082295646]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="TTS_voces_comandos" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=53482309]
+visible = false
+layout_mode = 2
+text = "Voces comandos"
+
+[node name="voces2" type="OptionButton" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1255464864]
+visible = false
+layout_mode = 2
+script = ExtResource("2_8w0xg")
+
+[node name="TTS_voces_menu" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=918523210]
+visible = false
+layout_mode = 2
+text = "Voces menús"
+
+[node name="voces1" type="OptionButton" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=91921491]
+visible = false
+layout_mode = 2
+script = ExtResource("3_3bvcn")
+
+[node name="TTS" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1012784030]
+layout_mode = 2
+text = "Volumen TTS"
+
+[node name="ttsSlide" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1647078552]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="Siguiente" type="Button" parent="MarginContainer/VBoxContainer" unique_id=717683899]
+layout_mode = 2
+text = "Siguiente"
+
+[node name="Salir" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1981668767]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Salir al menú de inicio"
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="." unique_id=580139719]
+position = Vector2(427, 157)
+stream = ExtResource("4_85bev")
+bus = &"bus_SFX"
+
+[node name="musica" type="AudioStreamPlayer2D" parent="." unique_id=1371092734]
+position = Vector2(427, 157)
+stream = ExtResource("5_nqaqt")
+bus = &"bus_Musica"
+
+[node name="general" type="AudioStreamPlayer2D" parent="." unique_id=138432027]
+stream = ExtResource("6_qim18")
+
+[node name="tts" type="AudioStreamPlayer2D" parent="." unique_id=788156146]
+stream = ExtResource("7_nqaqt")
+bus = &"bus_TTS"
+
+[node name="TTS" type="AudioStreamPlayer2D" parent="." unique_id=909416754]
+unique_name_in_owner = true
+bus = &"bus_TTS"
+
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/GridContainer/generalSlider" to="." method="_on_general_slider_focus_entered"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/generalSlider" to="." method="_on_general_slider_value_changed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/GridContainer/musicSlider" to="." method="_on_music_slider_focus_entered"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/musicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/GridContainer/sfxSlider" to="." method="_on_sfx_slider_focus_entered"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/sfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/GridContainer/voces2" to="MarginContainer/VBoxContainer/GridContainer/voces2" method="_on_focus_entered"]
+[connection signal="item_focused" from="MarginContainer/VBoxContainer/GridContainer/voces2" to="MarginContainer/VBoxContainer/GridContainer/voces2" method="_on_item_focused"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/GridContainer/voces2" to="MarginContainer/VBoxContainer/GridContainer/voces2" method="_on_item_selected"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/GridContainer/voces1" to="MarginContainer/VBoxContainer/GridContainer/voces1" method="_on_focus_entered"]
+[connection signal="item_focused" from="MarginContainer/VBoxContainer/GridContainer/voces1" to="MarginContainer/VBoxContainer/GridContainer/voces1" method="_on_item_focused"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/GridContainer/voces1" to="MarginContainer/VBoxContainer/GridContainer/voces1" method="_on_item_selected"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/GridContainer/ttsSlide" to="." method="_on_tts_slide_focus_entered"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/ttsSlide" to="." method="_on_tts_slide_value_changed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Siguiente" to="." method="_on_siguiente_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Siguiente" to="." method="_on_siguiente_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

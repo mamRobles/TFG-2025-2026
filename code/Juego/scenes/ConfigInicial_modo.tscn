@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://16nsleod7la7"]
+
+[ext_resource type="Script" uid="uid://ltwv8j22h6ih" path="res://Juego/Scripts/config_inicial_modo.gd" id="1_h76my"]
+[ext_resource type="Script" uid="uid://btmkn6tsyhk1n" path="res://Juego/Scripts/CI_modoconfirmacion.gd" id="2_pqlti"]
+
+[node name="ConfigInicialModo" type="Control" unique_id=2052562441]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h76my")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1406099490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=959827919]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1278509336]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Modo de juego"
+
+[node name="1pl" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1230984067]
+layout_mode = 2
+text = "Un jugador"
+
+[node name="2pl" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1967074292]
+layout_mode = 2
+text = "Dos jugadores"
+
+[node name="Salir" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1326506093]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Salir al menú de inicio"
+
+[node name="Confirmacion" type="PanelContainer" parent="." unique_id=1800190806]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_pqlti")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Confirmacion" unique_id=935546206]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Confirmacion/VBoxContainer" unique_id=131986569]
+layout_mode = 2
+text = "Va a jugar con"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Modo" type="Label" parent="Confirmacion/VBoxContainer" unique_id=117004663]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Confirmacion/VBoxContainer" unique_id=1070355572]
+layout_mode = 2
+
+[node name="Continuar" type="Button" parent="Confirmacion/VBoxContainer/VBoxContainer" unique_id=1393594292]
+layout_mode = 2
+text = "Continuar"
+
+[node name="Atrás" type="Button" parent="Confirmacion/VBoxContainer/VBoxContainer" unique_id=838648814]
+layout_mode = 2
+text = "Atrás"
+
+[node name="TTS" type="AudioStreamPlayer2D" parent="." unique_id=993327899]
+unique_name_in_owner = true
+bus = &"bus_TTS"
+
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/1pl" to="." method="_on_pl_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/1pl" to="." method="_on_pl_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/2pl" to="." method="_on_p2_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/2pl" to="." method="_on_p2_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_focus_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="visibility_changed" from="Confirmacion" to="Confirmacion" method="_on_visibility_changed"]
+[connection signal="focus_entered" from="Confirmacion/VBoxContainer/VBoxContainer/Continuar" to="Confirmacion" method="_on_continuar_focus_entered"]
+[connection signal="pressed" from="Confirmacion/VBoxContainer/VBoxContainer/Continuar" to="Confirmacion" method="_on_continuar_pressed"]
+[connection signal="focus_entered" from="Confirmacion/VBoxContainer/VBoxContainer/Atrás" to="Confirmacion" method="_on_atrás_focus_entered"]
+[connection signal="pressed" from="Confirmacion/VBoxContainer/VBoxContainer/Atrás" to="Confirmacion" method="_on_atrás_pressed"]

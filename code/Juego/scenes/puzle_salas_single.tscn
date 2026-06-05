@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bl7om5v26pp1"]
+
+[ext_resource type="Script" uid="uid://u443hoie8vdo" path="res://Juego/Scripts/puzle_salas_single.gd" id="1_aa7uy"]
+[ext_resource type="AudioStream" uid="uid://dbtgmmtuxf7xc" path="res://Juego/sonidos/aguapuzle.wav" id="1_dcp26"]
+[ext_resource type="AudioStream" uid="uid://by7li67biqfym" path="res://Juego/sonidos/arcadepuzle.wav" id="3_aa7uy"]
+[ext_resource type="AudioStream" uid="uid://dxw1siyhltgh4" path="res://Juego/sonidos/bosquepuzle.wav" id="3_iupth"]
+
+[node name="PuzleSalasSingle" type="Control" unique_id=415182036]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aa7uy")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1755619743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=794269204]
+layout_mode = 2
+
+[node name="izq" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1151716613]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<--"
+
+[node name="arriba" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1400993258]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "^
+|"
+
+[node name="der" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1431134489]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-->"
+
+[node name="area1" type="AudioStreamPlayer2D" parent="." unique_id=718373149]
+stream = ExtResource("1_dcp26")
+bus = &"Ambiente_SFX"
+
+[node name="area2" type="AudioStreamPlayer2D" parent="." unique_id=2006042382]
+stream = ExtResource("3_aa7uy")
+bus = &"Ambiente_SFX"
+
+[node name="area3" type="AudioStreamPlayer2D" parent="." unique_id=1947281985]
+stream = ExtResource("3_iupth")
+bus = &"Ambiente_SFX"
+
+[node name="TTS" type="AudioStreamPlayer2D" parent="." unique_id=194710772]
+unique_name_in_owner = true
+bus = &"bus_TTS"
+
+[connection signal="focus_entered" from="MarginContainer/HBoxContainer/izq" to="." method="_on_izq_focus_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/izq" to="." method="_on_izq_pressed"]
+[connection signal="focus_entered" from="MarginContainer/HBoxContainer/arriba" to="." method="_on_arriba_focus_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/arriba" to="." method="_on_arriba_pressed"]
+[connection signal="focus_entered" from="MarginContainer/HBoxContainer/der" to="." method="_on_der_focus_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/der" to="." method="_on_der_pressed"]
