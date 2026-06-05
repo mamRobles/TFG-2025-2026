@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://chigmcb38b7vu"]
+
+[ext_resource type="Script" uid="uid://bhv7y3x3hop54" path="res://Global/Scripts/pausa.gd" id="1_rk1y3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kh8cl"]
+bg_color = Color(0.17161083, 0.17103961, 0.13971937, 1)
+
+[node name="Pausa" type="Control" unique_id=1122605042]
+process_mode = 2
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rk1y3")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1550493853]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kh8cl")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2083705073]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1535470996]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1271802643]
+layout_mode = 2
+text = "Volver al juego"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1697830951]
+layout_mode = 2
+text = "Salir al menú"
