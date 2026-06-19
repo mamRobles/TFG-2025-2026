@@ -1,4 +1,6 @@
 \thispagestyle{empty}
+\chapter*{}
+\thispagestyle{empty}
 
 \begin{center}
 {\large\bfseries Accesibilidad en videojuegos \\ para personas con visión reducida mediante estrategias de
@@ -9,19 +11,22 @@ María del Mar Martínez Robles\\
 \end{center}
 
 %\vspace{0.7cm}
-
+\thispagestyle{empty}
 \vspace{0.5cm}
-\noindent\textbf{Palabras clave}: \textit{software libre}
+\noindent\textbf{Palabras clave}: Accesibilidad digital, audiojuegos, interfaces auditivas, diseño de videojuegos, evaluación heurística.
 \vspace{0.7cm}
 
 \noindent\textbf{Resumen}\\
-	% TODO: Escribir resumen
-1. Motivación del trabajo. (También hay una sección para eso más detallada en Introducción)\\
-2. Objetivos iniciales. (También hay una sección para eso más detallada en Introducción) \\
-3. La metodología, las tecnologías y herramientas utilizadas (luego se estudian en la sección de estado del arte y se explican en la propuesta) \\
-4. Resultados y conclusiones a las que se llega. Más extensos en la sección de conclusiones y trabajos futuros \\
-\cleardoublepage
-
+	
+	En las últimas décadas, la digitalización de los servicios y la creciente importancia de las tecnologías de la información han creado una brecha de accesibilidad para las personas con ceguera parcial y total. Debido a la dependencia visual de estas herramientas, su utilización puede conformar un reto para estos usuarios y su implementación generalizada impide su independencia. Para mitigar estos problemas, los organismos gubernamentales han enfocado sus esfuerzos en regular los criterios bajo los cuales se deben crear las aplicaciones \textit{software} con el objetivo de integrar a las personas con deficiencias sensoriales. Estas regulaciones, sin embargo, no consideran la totalidad de contextos bajo los que se desarrollan sistemas informáticos, sino que se enfocan en las herramientas propias de las entidades públicas y por lo tanto son insuficientes en otro tipo de aplicaciones más específicas, como son los videojuegos. \\
+	
+	Como respuesta a esta necesidad, este trabajo tiene como objetivo la recopilación de heurísticas de evaluación software aplicables a videojuegos cuyo diseño busque ser accesible para personas con deficiencia visual. Posteriormente, se ejemplificará el uso de las heurísticas mediante el desarrollo de un audiojuego accesible y su evaluación con usuarios finales con ceguera. Además, se propone un modelo de juego multijugador, con el objetivo de mejorar la integración social de los usuarios ciegos a través de ocio inclusivo.\\
+	
+	Debido a que la mayoría de trabajos en este ámbito se realizan en entornos no estándar para la industria, su posterior consulta por desarrolladores es dificultosa y de escaso apoyo para sus proyectos. Con el fin de evitar este problema, el presente trabajo utilizará un motor de código libre utilizado para juegos en entornos profesionales y liberará su código. \\
+	\newpage
+\thispagestyle{empty}	
+\chapter*{}
+\thispagestyle{empty}
 \begin{center}
 	{\large\bfseries Accessibility in video games
  \\ for people with low vision through
@@ -31,13 +36,36 @@ sonification strategies }\\
 	María del Mar Martínez Robles\\
 \end{center}
 \vspace{0.5cm}
-\noindent\textbf{Keywords}: \textit{open source}, \textit{floss}
+\noindent\textbf{Keywords}: Digital accessibility, audiogames, auditory interfaces, Videogame design, Heuristic evaluation. 
 \vspace{0.7cm}
 
 \noindent\textbf{Abstract}\\
 
+In recent decades, the digitalization of services and the growing importance of information technology have created an accessibility gap for people who are partially or totally blind. Because these tools rely heavily on visual input, using them can be a challenge for these users, and their widespread implementation hinders their independence. To mitigate these problems, government agencies have focused their efforts on regulating the criteria under which software applications must be developed, with the goal of integrating people with sensory impairments. These regulations, however, do not consider the full range of contexts in which computer systems are developed; rather, they focus on the tools used by public entities and are therefore insufficient for other, more specific types of applications, such as video games. \\
 
-\cleardoublepage
+In response to this need, this work aims to compile software evaluation heuristics applicable to video games designed to be accessible to people with visual impairments. Subsequently, the use of these heuristics will be demonstrated through the development of an accessible audio game and its evaluation with end users who are blind. Additionally, a multiplayer game model is proposed, with the goal of improving the social integration of blind users through inclusive leisure.\\
+
+Because most work in this field is carried out in environments that are non-standard for the industry, it is difficult for developers to refer back to it, and it offers little support for their projects. To address this issue, this project will utilize an open-source engine used for games in professional settings and will release its source code. \\
+\newpage
+\thispagestyle{empty}
+\chapter*{}
+\thispagestyle{empty}
+
+\noindent\rule[-1ex]{\textwidth}{2pt}\\[4.5ex]
+
+Yo \textbf{María del Mar Martínez Robles}, alumna de la titulación Ingeniería Informática e la E.T.S. de Ingenierías Informática y de Telecomunicación de la Universidad de Granada, con DNI 77145941P, autorizo la ubicación de la siguiente copia de mi Trabajo Fin de Grado en la biblioteca del centro para que pueda ser consultada por las personas que lo deseen.
+
+\vspace{0.5cm}
+
+Y para que conste, firma el presente informe en Granada a 19 de Junio de 2026.
+
+
+\vspace{5cm}
+
+\noindent Fdo: María del Mar Martínez Robles
+\newpage
+\thispagestyle{empty}
+\chapter*{}
 
 \thispagestyle{empty}
 
@@ -58,18 +86,33 @@ que corresponda.
 
 \vspace{0.5cm}
 
-Y para que conste, expiden y firman el presente informe en Granada a Junio de 2026.
+Y para que conste, expiden y firman el presente informe en Granada a 19 de Junio de 2026.
 
 \vspace{1cm}
 
-\textbf{El/la director(a)/es: }
+\textbf{El director: }
 
 \vspace{5cm}
 
 \noindent \textbf{Antonio Bautista Bailón Morillas}
-
+\newpage
+\thispagestyle{empty}
 \chapter*{Agradecimientos}
 
+\thispagestyle{empty}
+Por la dedicación y su apoyo en el desarrollo y redacción de este proyecto y su aporte en mi formación académica:\\
+
+Agradezco especialmente a Antonio, por su excelente labor docente y el tiempo invertido en guiar el progreso de este trabajo. Su atención y discernimiento han sido indispensables para el proceso de desarrollo del proyecto. La realización de este estudio no habría sido posible sin su colaboración.\\
+
+Asimismo, quiero agradecer al Vicerrectorado de Igualdad, Inclusión y Compromiso Social, especialmente a Mª Ángeles Martínez Sánchez, Directora del Secretariado para la Inclusión del Dpto. de Trabajo Social y Servicios Sociales y a Laura del Pino García, por su tiempo dedicado a mis consultas y la reunión que se efectuó para la orientación del trabajo.\\
+
+Igualmente, doy las gracias al proyecto Modos-ON, del centro de tiflotecnología e innovación de la ONCE, en especial a Javier, Agustín y Santos, por su asesoramiento profesional y su dedicación al presente trabajo. Sus consultas y apuntes fueron indispensables para la mejora y corrección del prototipo final.\\
+
+Además, quiero agradecer a María José Rodríguez Fórtiz, debido a su orientación sobre el estado del arte del trabajo y el tiempo dedicado a la consulta de dudas sobre legislación y accesibilidad.\\
+
+Asimismo, quiero recalcar el apoyo y consideración de mi familia, su paciencia en la realización de pruebas de usuario y su ánimo en el desarrollo de este trabajo. \\
+
+Por último, un agradecimiento sincero a todos mis amigos de la ETSIIT, sin los cuales no sería quien soy hoy en día.\\
 
 
 

@@ -74,29 +74,32 @@ right = \frqq{},%
 leftsub = \glqq,{},% 
 rightsub = \grqq,{} %
 ]{dirtytalk}
+\usepackage{amsmath}
 \begin{document}
 
 	% Plantilla portada UGR
 	\input{portada/portada}
-
+	
 	% Plantilla prefacio UGR
 	\input{prefacios/prefacio}
 
 	% Índice de contenidos
 	\newpage
+	\thispagestyle{empty}
 	\tableofcontents
 
 	% Índice de imágenes y tablas
 	\newpage
+	\thispagestyle{empty}
 	\listoffigures
-
+\newpage
+\thispagestyle{empty}
 	% Si hay suficientes se incluirá dicho índice
 	\listoftables 
+	
 	\newpage
+	\thispagestyle{empty}
 
-    % Indice de conceptos (en caso de que hubiera suficientes)
-    \input{secciones/Glosario}
-    \newpage
     
 	% Introducción 
 	\input{secciones/01_introduccion}
@@ -114,6 +117,7 @@ rightsub = \grqq,{} %
 	% Conclusiones
 	\input{secciones/04_conclusiones}
 
+	\input{secciones/A_encuesta.tex}
 	% Trabajos futuros
 	\newpage
     \printbibliography

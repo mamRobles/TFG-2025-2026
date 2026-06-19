@@ -1,33 +1,37 @@
 \chapter{Estado del arte}
-\section{Introducción}
-El objetivo de esta revisión es encontrar una serie de heurísticas como referencia para evaluar el audiojuego que conformará el desarrollo del trabajo y los subsiguientes que tomen de referencia este documento, así como informarse del estado actual de la tecnología, tanto a un nivel de desarrollo e investigación como legal y social.\\
+\section{Preámbulo a la revisión}
+El objetivo de esta revisión es encontrar una serie de heurísticas como referencia para evaluar la accesibilidad de audiojuegos. Posteriormente, se desarrollará un videojuego para evaluar dichas heurísticas. Además, se busca informarse del estado actual de la tecnología, tanto a un nivel de desarrollo e investigación como legal y social.\\
 
 Debido a la variedad de estudios y aplicaciones de los audiojuegos, ya sea en educación \cite{cabrera-solanoUseAudiogamesStrategic2020, araujoDesignUsabilityBraillebased2016}, estudios de concienciación social \cite{siqueiradasilvaPromotionEmpathyExperience2019}, la evolución transmedia de los medios de comunicación convencionales \cite{campoverdeAudiojuegosNuevaHerramienta2020} o estudios de interacción entre computadores y humanos \cite{cordeiroMurkyShootingUse2012}, es necesaria una revisión bibliográfica que ponga en contexto el presente trabajo y oriente las siguientes secciones adecuadamente. Para explorar todas las dimensiones que afectan al trabajo, se ha realizado un análisis dividido en tres secciones.
 
 \begin{itemize}
-\item En la primera, se investiga el estado de la accesibilidad  tecnológica para personas de visión reducida o nula enmarcando así el trabajo. En esta sección se incluye la legislación vigente, las directrices existentes sobre desarrollo accesible en otros ámbitos de la ingeniería informática y las iniciativas llevadas a cabo desde distintas organizaciones.
+\item En la primera, se investiga el estado de la accesibilidad  tecnológica para personas con visión reducida o nula, enmarcando así el trabajo. En esta sección se incluye la legislación vigente, las directrices existentes sobre desarrollo accesible en otros ámbitos de la ingeniería informática y las iniciativas llevadas a cabo desde distintas organizaciones.
 
-\item El segundo estudio, se revisan heurísticas de evaluación de audiojuegos propuestas, se compila el trabajo existente en un análisis sistemático comparativo y se realizan preguntas sobre si se han aplicado dichas heurísticas a desarrollos de audiojuegos, cuánto han sido citadas, si están bien referenciadas y si están  aplicadas en audiojuegos desarrollados o usuarios finales. El propósito de esta sección es recopilar una serie de criterios para evaluar el desarrollo del trabajo y orientar la búsqueda de herramientas para su aplicación.
+\item En el segundo estudio, se compilarán las heurísticas de evaluación. El propósito de esta sección es recopilar una serie de criterios para evaluar el desarrollo del trabajo y orientar la búsqueda de herramientas para su aplicación. Se siguen los siguientes pasos:
+\subitem Se revisan heurísticas de evaluación de audiojuegos propuestas.
+\subitem Se compila el trabajo existente en un análisis sistemático comparativo.
+\subitem Se realizan preguntas sobre si se han aplicado dichas heurísticas a desarrollos de audiojuegos.
+
     
 \item En el último estudio, se revisan los audiojuegos en un contexto académico. Se consideran trabajos cuyo objetivo sea el desarrollo de un audiojuego y la prueba del mismo con usuarios finales. Se revisa la disponibilidad del código y del ejecutable y el impacto posterior del estudio y su efecto en el desarrollo de audiojuegos accesibles. 
     
 \end{itemize} 
 
-En cada sección se listarán preguntas que pretenden enmarcar la búsqueda y especificar el análisis a las necesidades de este trabajo. Posteriormente, se consultarán las bases de datos académicas indexadas especificadas en la revisión mediante el uso de palabras clave y se sintetizará la información recopilada para su consulta.\\
+En cada sección se listarán preguntas que pretenden enmarcar la búsqueda y especificar el análisis de las necesidades de este trabajo. Posteriormente, se consultarán las bases de datos académicas indexadas especificadas en la revisión mediante el uso de palabras clave y se sintetizará la información recopilada para su consulta.\\
 
-En las conclusiones se realizará la lista de heurísticas seleccionadas según los criterios de inclusión y exclusión, el resultado de la búsqueda sobre la relevancia de los trabajos de audiojuegos y su desarrollo y la situación actual de la legislación y la estandarización sobre la accesibilidad en audiojuegos.\\
+En las conclusiones se presenta la lista de heurísticas seleccionadas según los criterios de inclusión y exclusión, el resultado de la búsqueda sobre la relevancia de los trabajos de audiojuegos y su desarrollo y la situación actual de la legislación y la estandarización sobre la accesibilidad en audiojuegos.\\
 
 \section{Revisión}
 % TODO redactar revisión
 
- En las siguientes secciones se presenta el trabajo relacionado, identificado tras una búsqueda bibliográfica utilizando, como bases de datos de referencia, Scopus, Google Scholar %TODORELLENAR 
- Tras elegir las bases de datos, se realizaron búsquedas utilizando las siguientes palabras clave: \say{audiojuegos},
+ En las siguientes secciones se presentan las heurísticas, los audiojuegos y la legislación relacionados, identificado tras una búsqueda bibliográfica utilizando, como bases de datos de referencia, Scopus, la Biblioteca de la Universidad de Granada, IEEEXplore y Google Scholar. %TODORELLENAR 
+ Tras elegir las bases de datos, se realizaron búsquedas utilizando las siguientes palabras clave: \say{audiojuegos}, \say{accesibilidad} y \say{personas ciegas}.
  
  \subsection{Herramientas utilizadas para la revisión y sus secciones}
  
  Para la clasificación e indexado de las referencias estudiadas, se hizo un pequeño estudio comparativo de algunas herramientas de gestión bibliográfica. Se tuvieron en cuenta los siguientes criterios:
  \begin{itemize}
- 	\item Disponibilidad para Linux.
+ 	\item Disponibilidad para Linux, al ser el sistema operativo principal de la desarrolladora.
  	\item Gratuidad. \textit{freemium}, gratis o de pago. 
  	\item Licencia de la aplicación. Propietaria, Libre u \textit{Open Source}.
  	\item Disponibilidad de un \textit{plugin} para el navegador Firefox, para facilitar la indexación.
@@ -67,15 +71,15 @@ En las conclusiones se realizará la lista de heurísticas seleccionadas según 
  \subsection{Legislación y contexto}
  En esta sección, se revisan los planes de inclusión de diferentes cuerpos legislativos en los que se enmarca el proyecto, la legislación vigente en materia de accesibilidad para personas con discapacidad visual en contextos tecnológicos, las directrices existentes sobre desarrollo accesible en otros ámbitos de la ingeniería informática y  las iniciativas llevadas a cabo desde distintas organizaciones. \\
  
- Respecto a los planes de inclusión vigentes, se han consultado a distintos ámbitos y niveles de influencia.\\
+ Respecto a los planes de inclusión vigentes, se han consultado en distintos ámbitos y niveles de influencia.\\
  
  En la Universidad de Granada, el último plan de accesibilidad es el \say{I Plan sobre la Accesibilidad Universal e Inclusión Social de la Universidad de Granada}, aprobado el 21 de noviembre de 2022. Entre sus ejes estratégicos, en el eje 8 \say{accesibilidad universal} se contabiliza como objetivo \say{Acción 8.2.2: Publicar material en abierto con recomendaciones para facilitar la accesibilidad a la información y a la comunicación} \cite[p ~103]{iplan-accesibilidad-ugr}. Forma también parte como objetivo de la Universidad la \say{Acción 8.2.5: Incluir subtítulos y audiodescripciones en los contenidos audiovisuales de todas las comunicaciones de la universidad para garantizar la accesibilidad de las personas con discapacidad auditiva o visual}\cite[p ~104]{iplan-accesibilidad-ugr}. Ambos objetivos afectan directamente al ámbito de este trabajo, ya que el desarrollo de un audiojuego y su evaluación con heurísticas específicas pueden utilizarse en otros campos de la informática para adaptar la interfaz al usuario que presente la discapacidad visual y así facilitar el uso de las plataformas digitales.\\
  
- A un nivel nacional, existe el \say{II Plan Nacional de Accesibilidad} presentado en 2023 por el Ministerio de Derechos Sociales y Agenda 2030. En él, se presenta que, tras una encuesta realizada durante la elaboración del plan, del total de los encuestados la discapacidad sensorial visual era la segunda predominante \cite[p ~54]{plan-nacional-accesibilidad-2023}. En esa misma encuesta, se revela que la principal disconformidad respecto a las tecnologías, es su difícil comprensión. Respecto a la materia de este trabajo, no se explicita el foco sobre los audiojuegos, puesto que no entran en las competencias del estado, pero sí es parte de los objetivos específicos la Medida 5.2.4 \say{Impulsar la innovación social y tecnológica en materia de accesibilidad} \cite[p ~41]{plan-nacional-accesibilidad-2023}. Los avances en este trabajo participan en esta medida, investigando el desarrollo en tecnologías de sonificación que pueden aplicarse en otros ámbitos tecnológicos que requieran adaptación.\\
+ A un nivel nacional, existe el \say{II Plan Nacional de Accesibilidad} presentado en 2023 por el Ministerio de Derechos Sociales y Agenda 2030. En él, se presenta que, tras una encuesta realizada durante la elaboración del plan, del total de los encuestados la discapacidad sensorial visual era la segunda predominante \cite[p ~54]{plan-nacional-accesibilidad-2023}. En esa misma encuesta, se revela que la principal disconformidad respecto a las tecnologías, es su difícil comprensión. Respecto a la materia de este trabajo, no se explicita el foco sobre los audiojuegos, pero sí es parte de los objetivos específicos la Medida 5.2.4 \say{Impulsar la innovación social y tecnológica en materia de accesibilidad} \cite[p ~41]{plan-nacional-accesibilidad-2023}. Los avances en este trabajo participan en esta medida, investigando el desarrollo en tecnologías de sonificación que pueden aplicarse en otros ámbitos tecnológicos que requieran adaptación.\\
  
- Aparte de los planes de accesibilidad, existe legislación específica destinada a la inclusión de personas con discapacidad tanto en el estado español como en la comisión europea.\\
+ Aparte de los planes de accesibilidad, existe legislación específica tanto en el estado español como en la comisión europea destinados a regular la inclusión de personas con discapacidad en sus áreas de jurisdicción.\\
  
- En términos legislativos españoles, el \say{Real Decreto 193/2023, de 21 de marzo}, regula  las condiciones de accesibilidad para las personas con discapacidad respecto el acceso y utilización de los bienes y servicios del estado \cite{ministeriodederechossocialesyagenda2030RealDecreto1932023}. Como parte de servicios, incluye \say{actividades [...], profesionales, artísticas y recreativas} que estén dispuestas al público, es decir, \say{que se encuentran en situación de ser adquiridos, contratados, consumidos o usados por la ciudadanía [...], a cambio o no de renumeración}\cite[p ~6]{ministeriodederechossocialesyagenda2030RealDecreto1932023}, en lo que se incluyen tanto audiojuegos educativos como lúdicos. En él, se mencionan varios ámbitos donde los avances de sonificación y descripción auditiva del contexto podrían utilizarse, como la administración pública, que está obligada a garantizar su accesibilidad universal en páginas o sitios de Internet abiertos al público general \cite[p ~10]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}. También las administraciones educativas están obligadas a la adaptación de los sistemas, materiales y soportes educativos digitales y tecnológicos para evitar la exclusión de las personas con discapacidad \cite[p ~13]{ministeriodederechossocialesyagenda2030RealDecreto1932023}. Estas medidas forman parte de los pliegos y licitaciones públicas pertinentes, afectando así a los terceros contratados por las administraciones pertinentes que deban realizar aplicaciones para ellas \cite[p ~17]{ministeriodederechossocialesyagenda2030RealDecreto1932023}.\\
+ En términos legislativos españoles, el \say{Real Decreto 193/2023, de 21 de marzo}, regula  las condiciones de accesibilidad para las personas con discapacidad respecto el acceso y utilización de los bienes y servicios del estado \cite{ministeriodederechossocialesyagenda2030RealDecreto1932023}. Como parte de servicios, incluye \say{actividades [...], profesionales, artísticas y recreativas} que estén dispuestas al público, es decir, \say{que se encuentran en situación de ser adquiridos, contratados, consumidos o usados por la ciudadanía [...], a cambio o no de remuneración}\cite[p ~6]{ministeriodederechossocialesyagenda2030RealDecreto1932023}, en lo que se incluyen tanto audiojuegos educativos como lúdicos. En él, se mencionan varios ámbitos donde los avances de sonificación y descripción auditiva del contexto podrían utilizarse, como la administración pública, que está obligada a garantizar su accesibilidad universal en páginas o sitios de Internet abiertos al público general \cite[p ~10]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}. También las administraciones educativas están obligadas a la adaptación de los sistemas, materiales y soportes educativos digitales y tecnológicos para evitar la exclusión de las personas con discapacidad \cite[p ~13]{ministeriodederechossocialesyagenda2030RealDecreto1932023}. Estas medidas forman parte de los pliegos y licitaciones públicas pertinentes, afectando así a los terceros contratados por las administraciones pertinentes que deban realizar aplicaciones para ellas \cite[p ~17]{ministeriodederechossocialesyagenda2030RealDecreto1932023}.\\
  
  Además, el \say{Real Decreto Legislativo 1/2013, de 29 de noviembre} describe los derechos básicos de las personas con discapacidad. El objeto de esta ley es garantizar el derecho a la igualdad de oportunidades y de trato de las personas con discapacidad, en lo que incluye la accesibilidad universal \cite[p ~ 10]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, materia principal de este trabajo académico. Incluidos en los ámbitos de aplicación, se encuentran \say{Telecomunicaciones y sociedad de la información} y \say{bienes y servicios a disposición del público} \cite[p ~ 13]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, categorías en las que se enmarcan los audiojuegos. Entre los derechos descritos en esta ley, los conocimientos delineados y desarrollados en este trabajo pueden aplicarse en el artículo 16 (educación) \cite[p ~ 17]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, a través de \textit{serious games} educativos \cite{cabrera-solanoUseAudiogamesStrategic2020}; el artículo 22 (accesibilidad) \cite[p ~ 19]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, mediante la integración de las personas con discapacidad en servicios y bienes lúdicos \cite{andradeIntroducingGamerInformationControl2020}; en el artículo 24 que exige a los productos y servicios de las sociedad de la información ser accesibles \cite[p ~ 20]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, cualidad que los audiojuegos pueden proveer \cite{campoverdeAudiojuegosNuevaHerramienta2020} y el artículo 59 de toma de conciencia social \cite[p ~30]{ministeriodesanidadserviciossocialeseigualdadRealDecretoLegislativo2013}, que es posible alcanzar con audiojuegos \cite{siqueiradasilvaPromotionEmpathyExperience2019}. \\
  
@@ -83,12 +87,11 @@ En las conclusiones se realizará la lista de heurísticas seleccionadas según 
  
  La segunda, la \say{Ley Europea de Accesibilidad} o \say{Acto europeo de accesibilidad (EAA)} \cite{DirectiveEU20192019}, adoptada en 2019 y aplicada al estado español a través de la Ley 11/2023 de 8 de mayo \cite{jefaturadelestadoLey1120232023}, regula un ámbito más amplio, e incluye servicios y productos disponibles en la Unión Europea, extendiéndose así al sector privado. Uno de los sectores afectados por este acto es el desarrollo de software, ya que establece que los activos digitales deben ser accesibles para usuarios con discapacidades, incluyendo aplicaciones móviles, contenido multimedia y software \cite[p ~83]{DirectiveEU20192019}. Si bien los bienes lúdicos no están incluidos en esta directiva, los desarrollos en estrategias de sonificación y su evaluación pueden ser aplicados a los ámbitos de la ley.\\
 
- A continuación, se estudian las directrices estandarizadas y normativas pertinentes a la accesibilidad en ingeniería informática, con un énfasis en las secciones destinadas a personas con discapacidad visual.
+ A continuación, se estudian las directrices estandarizadas y normativas pertinentes a la accesibilidad en aplicaciones y sistemas desarrollados en el contexto de la ingeniería informática, con un énfasis en las secciones destinadas a personas con discapacidad visual.
  
  La WCAG, \say{\textit{Web Content Accessibility Guidelines}}, es la referencia de accesibilidad más citada en trabajos de esta materia en sus distintas versiones\cite[p ~201]{almeidaEvaluacionesHeuristicasPara2023}, así como su modelo de evaluación RSL \cite[p ~214]{almeidaEvaluacionesHeuristicasPara2023}. A pesar de que el foco de estas directrices es el desarrollo web, debido a su relevancia en el campo de estudio se ha considerado para este trabajo. Cabe destacar que las recomendaciones de la WCAG 2.2 existen recogidas en el estándar internacional ISO/IEC 40500:2025 \cite{ISOIEC40500a} para su referenciado por parte de organismos públicos. A nivel europeo, los criterios de WCAG 2.1 forman parte del estándar europeo EN 301549 \cite{EN301549-2021} y de su versión oficial en español  UNE-EN 301549:2022 \cite{UNEEN3015492022}. WCAG 2.2 tiene 13 pautas, organizadas bajo cuatro principios: perceptible, operable, comprensible y robusto. Para cada pauta, existen criterios de conformidad, clasificados en tres niveles A, AA y AAA. Debido a que estos criterios se podrían clasificar como heurísticas, serán referenciados en la sección posterior.\\
   \begin{figure}
-  	\caption{Número de publicaciones de estándares y legislaciones vigentes por año y organización. Elaboración propia.}
-  	\label{fig:normasAnio}
+  	
  	\begin{center}
  		\centering
  		\begin{adjustbox}{max width=\textwidth}
@@ -96,9 +99,10 @@ En las conclusiones se realizará la lista de heurísticas seleccionadas según 
  		\end{adjustbox}
  		
  	\end{center}
- 	
+ 	\caption{Número de publicaciones de estándares y legislaciones vigentes por año y organización. Elaboración propia.}
+ 	\label{fig:normasAnio}
  \end{figure}
- La norma internacional ISO 9241-171:2025 está diseñada para especificar requerimientos y guías para diseñar software accesible para personas con todo tipo de discapacidades sensoriales y cognitivas. Aplica tanto a software diseñado para web, como aplicaciones móviles, dispositivos domésticos o sistemas educativos \cite[p ~14]{ISOIEC40500}. Este documento no clasifica las medidas según el grupo demográfico al que ayudan, sino que las categoriza en base al propósito que cumplen, como que los sistemas sean perceptibles, entendibles, controlables, utilizables, equitativos y resistentes a errores, entre otras características \cite{ISOIEC40500}. Las directrices en este documento sirven para el diseño y desarrollo software accesible en general y múltiples de estas directrices son aplicables al caso de uso de este estudio.\\
+ La norma internacional ISO 9241-171:2025 está diseñada para especificar requerimientos y guías para diseñar software accesible para personas con todo tipo de discapacidades sensoriales y cognitivas. Aplica tanto a \textit{software} diseñado para web, como aplicaciones móviles, dispositivos domésticos o sistemas educativos \cite[p ~14]{ISOIEC40500}. Este documento no clasifica las medidas según el grupo demográfico al que ayudan, sino que las categoriza en base al propósito que cumplen, como que los sistemas sean perceptibles, entendibles, controlables, utilizables, equitativos y resistentes a errores, entre otras características \cite{ISOIEC40500}. Las directrices en este documento sirven para el diseño y desarrollo de \textit{software} accesible en general y múltiples de estas directrices son aplicables al caso de uso de este estudio.\\
  
  Respecto al estándar europeo EN 301 549 V3.2.1 \cite{EN301549-2021} y su versión española UNE-EN 301549:2022 \cite{UNEEN3015492022}, definen los requerimientos de productos y servicios basados en tecnologías de la información y comunicación. Es posible demostrar el cumplimiento de la directiva 2016/2102 \cite{DirectiveEU20162016} a través de este estándar \cite[p ~89]{EN301549-2021} y existe una actualización planificada para que también sea compatible con el Acto europeo de accesibilidad (EAA) \cite{DirectiveEU20192019}. Este documento se puede aplicar a cualquier producto tecnológico, incluyendo así aplicaciones de ordenador como audiojuegos. Considera por separado el uso de estas tecnologías sin visión y con visión limitada y reconoce que las herramientas de visión nula pueden beneficiar a los usuarios con visión limitada \cite[p ~ 20]{EN301549-2021}. Las directrices específicas junto a las tablas de conformidad de la normativa serán discutidas en la sección de heurísticas como métodos de evaluación del desarrollo. \\
  
@@ -106,7 +110,7 @@ En las conclusiones se realizará la lista de heurísticas seleccionadas según 
  
  Por último, entre los estándares existentes, es preciso señalar la existencia de WAI-ARIA, que ofrece una especificación técnica que pueden añadirse al código fuente de una página web para proporcionar información semántica adicional a las tecnologías de asistencia, como los lectores de pantalla \cite{AccessibleRichInternet}. Si bien el desarrollo de este trabajo no está basado en la web, la iniciativa podría tomarse de referencia para las consideraciones futuras sobre complementos a la programación existente de aplicaciones software para favorecer la accesibilidad universal.\\
 
- Todos los estándares y leyes aquí mencionados se encuentran recogidos y resumidos en la tabla \ref{table:legisl-resum} y sus años de publicación en la figura \ref{fig:normasAnio}. Para concluir la sección de legislación y contexto, resulta pertinente mencionar las iniciativas pertinentes llevadas a cabo desde distintas organizaciones.\\
+ Todos los estándares y leyes aquí mencionados se encuentran recogidos y resumidos en la tabla \ref{table:legisl-resum} y sus años de publicación en la figura \ref{fig:normasAnio}. Para concluir la sección de legislación y contexto, resulta pertinente mencionar las iniciativas llevadas a cabo desde distintas organizaciones.\\
  \begin{center}
  	
  	\begin{table}[h]
@@ -161,8 +165,7 @@ En las conclusiones se realizará la lista de heurísticas seleccionadas según 
  
  Para la realización del análisis comparativo, se utiliza de referencia el procedimiento utilizado en \say{Modelos para el análisis comparativo de herramientas de software: Una revisión sistemática de la literatura} \cite{romerodesouzaferreyraModelosParaAnalisis2017}, que a su vez toma como referencia \cite{GuidelinesPerforming}. Se revisan ambos para este trabajo. \\
    \begin{figure}
- 	\caption{Número de publicaciones de heurísticas de evaluación de audiojuegos analizadas. Elaboración propia.}
- 	\label{fig:heurisAnio}
+ 	
  	\begin{center}
  		\centering
  		\begin{adjustbox}{max width=\textwidth}
@@ -170,7 +173,8 @@ En las conclusiones se realizará la lista de heurísticas seleccionadas según 
  		\end{adjustbox}
  		
  	\end{center}
- 	
+ 	\caption{Número de publicaciones de heurísticas de evaluación de audiojuegos analizadas. Elaboración propia.}
+ 	\label{fig:heurisAnio}
  \end{figure}
  Como criterio de búsqueda, se tomaron primero los siguientes criterios de inclusión y exclusión:\\
  \begin{itemize}
@@ -197,7 +201,13 @@ En las conclusiones se realizará la lista de heurísticas seleccionadas según 
  	\item Se realiza una revisión preliminar de las heurísticas de los artículos restantes del paso 3, para aplicar el criterio CI.5.
  \end{enumerate}
 
-Una vez seleccionados los artículos, para considerar la validez de las heurísticas se han elaborado criterios de evaluación de calidad siguiendo las siguientes puntuaciones: Sí cumple (S) = 1, Cumple parcialmente (P) = 0.5, y No cumple (N) = 0, siguiendo la metodología de \cite{romerodesouzaferreyraModelosParaAnalisis2017}. Dichos criterios quedan descritos en la tabla \ref{table:crit-heur-calid}. Cabe destacar que las puntuaciones en estos criterios son bajas, puesto que la mayoría no supera la mitad del máximo obtenible (3). Esto se debe a que los trabajos de heurísticas no suelen realizar audiojuegos o encuestas, sino que otros trabajos de desarrollo las aplican posteriormente a su publicación. Además, la mayoría no cumplen el C4 por las pocas publicaciones relacionadas con la temática, impidiendo que los trabajos tengan más de 30 referencias. Esto se cumple también para este trabajo. Por último, no se suelen discutir las limitaciones de los estudios en esta categoría de trabajos, a pesar de que las muestras seleccionadas para las encuestas suelen ser pequeñas y no significativas.\\
+Una vez seleccionados los artículos, para considerar la validez de las heurísticas se han elaborado criterios de evaluación de calidad siguiendo las siguientes puntuaciones siguiendo la metodología de \cite{romerodesouzaferreyraModelosParaAnalisis2017}: 
+\begin{itemize}
+	\item Sí cumple (S) = 1
+	\item Cumple parcialmente (P) = 0.5
+	\item  No cumple (N) = 0
+\end{itemize}
+Dichos criterios quedan descritos en la tabla \ref{table:crit-heur-calid}. Cabe destacar que las puntuaciones en estos criterios son bajas, puesto que la mayoría no supera la mitad del máximo obtenible (3). Esto se debe a que los trabajos de heurísticas no suelen realizar audiojuegos o encuestas, sino que otros trabajos de desarrollo las aplican posteriormente a su publicación. Además, la mayoría no cumplen el C4 por las pocas publicaciones relacionadas con la temática, impidiendo que los trabajos tengan más de 30 referencias. Esto se cumple también para este trabajo. Por último, no se suelen discutir las limitaciones de los estudios en esta categoría de trabajos, a pesar de que las muestras seleccionadas para las encuestas suelen ser pequeñas y no significativas.\\
 
 \begin{center}
 	
@@ -298,10 +308,17 @@ Una vez seleccionados los artículos, para considerar la validez de las heuríst
 
 Tras seguir los pasos descritos previamente, se obtienen un total de 14 artículos de diferentes fuentes que contienen heurísticas o técnicas de evaluación de audiojuegos aplicables al trabajo. Los años de publicación de dichos trabajos se encuentran recogidos en la figura \ref{fig:heurisAnio}. Tras seleccionar las heurísticas, se han confeccionado y condensado 26 recomendaciones específicas. Las recomendaciones tienen preguntas asociadas que los desarrolladores pueden hacerse para comprobar el cumplimiento de la heurística, así como algunas técnicas relacionadas. No todas las preguntas aplican a todos los tipos de audiojuego, puesto que hay elementos variables como la interfaz gráfica o el género, pero en caso de que las características a las que hacen referencia las heurísticas estuvieran presentes, las preguntas y las técnicas sirven de orientación al desarrollo. Estas técnicas son decisiones de diseño que se deben tener en cuenta en fases iniciales del desarrollo \citeauthor{AEVIFundacionONCE2023}, lo cual puede explicar la cantidad reducida de juegos accesibles para personas con discapacidad visual. \\
 
-\begin{center}
-\centering
-	\textbf{EXPERIENCIA DE JUEGO, NIVEL Y PROGRESIÓN}
-\end{center}
+Las heurísticas se han clasificado en las siguientes categorías:
+\begin{itemize}
+	\item Experiencia de juego, nivel y progresión. Heurísticas de H1 a H9.
+	\item Entrada de datos/software y hardware. Heurísticas de H10 a H15.
+	\item Instalación/Configuración/Ayuda. Heurísticas de H16 a H19.
+	\item Elementos sonoros. Heurísticas de H20 a H22.
+	\item Elementos gráficos. Heurísticas de H23 a H26.
+	
+\end{itemize}
+\subsubsection{EXPERIENCIA DE JUEGO, NIVEL Y PROGRESIÓN}
+
 	\textbf{H1 Lenguaje claro}: Utilizar diálogos sencillos y claros para que las instrucciones del juego sean fáciles de entender. Dichos diálogos deben tener subtítulos sincronizados con el audio que se emite. \cite{EN301549-2021} \cite{jimenezhurtadoDimensionsSubdimensionsEQUIT2025} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
 	\textbf{Preguntas:}
 \begin{itemize}
@@ -383,11 +400,9 @@ Tras seguir los pasos descritos previamente, se obtienen un total de 14 artícul
 \textbf{Técnicas:}
 \begin{itemize}
 \item \textbf{Eventos en cinemáticas}: Diseñar las secuencias interactivas en cinemáticas en la misma zona de la pantalla para no buscarlas con la vista cuando aparecen. \cite{LibroBlancoAccesibilidad} 
+\subsubsection{ENTRADA DE DATOS/SOFTWARE Y HARDWARE}
 \end{itemize}
-\begin{center}
-	\centering
-	\textbf{ENTRADA DE DATOS/SOFTWARE Y HARDWARE}
-\end{center}
+
   \textbf{H10 Sensibilidad y tiempo de acción}: Proporcionar un medio para establecer características dependientes del tiempo, como la sensibilidad y la velocidad de los eventos, los movimientos y las acciones del juego. \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{WebContentAccessibility} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
  \textbf{Preguntas:}
  \begin{itemize}
@@ -444,10 +459,8 @@ Tras seguir los pasos descritos previamente, se obtienen un total de 14 artícul
 \begin{itemize}
 	\item \textbf{Voz a texto (multijugador)}: Posibilitar el dictado por voz en caso de requerir entrada de texto, a través de una API o desarrollándolo para el juego. Permite también redactar mensajes por chat multijugador. \cite{LibroBlancoAccesibilidad}
 \end{itemize}
-\begin{center}
-	\centering
-	\textbf{INSTALACIÓN/CONFIGURACIÓN/AYUDA}
-\end{center}
+\subsubsection{INSTALACIÓN/CONFIGURACIÓN/AYUDA}
+
 \textbf{H16  Emisión de comentarios inmediatos}: enviar comentarios inmediatos según las acciones del jugador, para que este sepa que sus acciones se están procesando, como informar al jugador sobre las entradas de datos, la necesidad de cerrar la ventana de diálogo, etc. Indique claramente la existencia de elementos visuales interactivos, utilizando elementos sonoros para describirlos. Indique al usuario su foco en los menús interactivos. \cite{deborbacamposUsabilityAccessibilityGameplay2016} \cite{WebContentAccessibility} \cite{teixeiraborgesFairPlayGuidelines2018a}\\
 \textbf{Preguntas:}
 \begin{itemize}
@@ -493,10 +506,8 @@ Tras seguir los pasos descritos previamente, se obtienen un total de 14 artícul
 \begin{itemize}
 	\item \textbf{Aviso al inicio del juego}: Es necesario informar al jugador antes de empezar el juego de las opciones de accesibilidad o su ausencia. Esta información debe estar en las plataformas en las que se distribuye el juego. \cite{araujoMobileAudioGames2017a}
 \end{itemize}
-\begin{center}
-	\centering
-	\textbf{ELEMENTOS SONOROS}
-\end{center}
+\subsubsection{ELEMENTOS SONOROS}
+
 \textbf{H20 Mecanismos de sonido interactivos}: Utilizar sonidos dinámicos, pistas de audio y efectos de sonido como sonido 3D, grabación binaural, sonido envolvente, mapa de audio estilo sonar, etc., de forma divertida y entretenida. \cite{teixeiraborgesFairPlayGuidelines2018a}\\
 \textbf{Preguntas:}
 \begin{itemize}
@@ -528,10 +539,8 @@ Tras seguir los pasos descritos previamente, se obtienen un total de 14 artícul
 	\item \textbf{Repetir último mensaje}: Habilitar un botón que permita recuperar la última frase, o implementar controles para retroceder o avanzar el diálogo. \cite{LibroBlancoAccesibilidad} 
 	\item \textbf{Percepción de volumen de los objetos}: Añadir a los objetos \textit{colliders}, con formas determinadas para ayudar a percibir el volumen de los elementos. \cite{LibroBlancoAccesibilidad}
 \end{itemize}
-\begin{center}
-	\centering
-	\textbf{ELEMENTOS GRÁFICOS}
-\end{center}
+\subsubsection{ELEMENTOS GRÁFICOS}
+
 \textbf{H23 Configuración gráfica}: Proporcione opciones de configuración gráfica, como desactivar los gráficos 3D, habilitar la personalización del color, el brillo y el contraste \cite{araujoMobileAudioGames2017a} \cite{WebContentAccessibility} \cite{teixeiraborgesFairPlayGuidelines2018a} \\
 \textbf{Preguntas:}
 \begin{itemize}
@@ -611,9 +620,9 @@ Los principales problemas detectados son la falta de claridad de sonido así com
 Esta forma de navegación requería de una gran cantidad de movimiento de parte de los jugadores, llevándolos a desorientarse en el mundo real. Además, el juego no identifica correctamente si un sonido está delante o detrás del usuario, permitiendo que un jugador avanzara en dirección contraria a la fuente del sonido \cite[p~6]{deoliveiraVirtualStageImmersive2015a}. \\
 
 \section{Conclusiones}
-En los últimos años se han puesto en vigor múltiples legislaciones que regulan los criterios a seguir para el desarrollo tecnológico accesible y universal, estandarizando los requisitos que los productos y servicios en Europa y España deben cumplir para su comercialización y distribución. Esto aclara las expectativas que deben seguir las empresas a la hora de conseguir pliegos o diseñar productos para el público general y favorece la creación de herramientas que faciliten el desarrollo accesible. Aunque no son las primeras de su género, es una materia que está tomando más peso institucional y desarrollar trabajos en esta dirección, ya no solo en accesibilidad para personas con discapacidad visual sino también para otro tipo de limitaciones sensoriales y cognitivas, es de actualidad y permite cumplir con los objetivos de las distintas organizaciones y entidades gubernamentales. \\
+En los últimos años se han puesto en vigor múltiples legislaciones que regulan los criterios a seguir para el desarrollo tecnológico accesible y universal, estandarizando los requisitos que los productos y servicios en Europa y España deben cumplir para su comercialización y distribución. Esto aclara las expectativas que deben seguir las empresas a la hora de conseguir pliegos o diseñar productos para el público general y favorece la creación de herramientas que faciliten el desarrollo accesible. Aunque no son las primeras de su género, es una materia que está tomando más peso institucional. Desarrollar trabajos en esta dirección, ya no solo en accesibilidad para personas con discapacidad visual sino también para otro tipo de limitaciones sensoriales y cognitivas, es de actualidad y permite cumplir con los objetivos de las distintas organizaciones y entidades gubernamentales. \\
 
-En materia de heurísticas, los trabajos en este área son escasos e infrecuentes, muchas veces desarrollados por los mismos autores o derivados de la misma fuente. La mayoría de los estudios recientes tienen una cantidad de referencias menor a 30 y no discuten sus limitaciones, como las muestras reducidas en las encuestas o los sesgos que pudiera haber en ellas. Las heurísticas desarrolladas en este trabajo no son sino un resumen de la literatura redactada en la última década, condensada en una lista para su futura posible referencia. En este trabajo se desarrolla un audiojuego que tendrá en consideración las heurísticas mencionadas anteriormente como forma de evaluación de la utilización y accesibilidad.\\
+En materia de heurísticas, los trabajos en este área son escasos e infrecuentes, muchas veces desarrollados por los mismos autores o derivados de la misma fuente. La mayoría de los estudios recientes tienen una cantidad de referencias menor a 30, como indica en  \cite{romerodesouzaferreyraModelosParaAnalisis2017} y no discuten sus limitaciones, como las muestras reducidas en las encuestas o los sesgos que pudiera haber en ellas. Las heurísticas desarrolladas en este trabajo no son sino un resumen de la literatura redactada en la última década, condensada en una lista para su futura posible referencia. En este trabajo se desarrolla un audiojuego que tendrá en consideración las heurísticas mencionadas anteriormente como forma de evaluación de la utilización y accesibilidad.\\
 
 Por último, los audiojuegos revisados son trabajos desarrollados en ámbitos académicos mayoritariamente y de diferentes épocas, marcos temporales y presupuestos. Ninguno de ellos se consideraría un videojuego profesional desarrollado con el propósito de obtener remuneración y por un estudio especializado. Por lo tanto es posible que los problemas analizados en estos proyectos sean resultado de la falta de tiempo de desarrollo, presupuesto o mano de obra y no una falta de recursos disponibles para crear audiojuegos accesibles. Se puede concluir, no obstante, que estos problemas de accesibilidad universal se consideraban en los trabajos y que son relevantes para el presente estudio. \\
 

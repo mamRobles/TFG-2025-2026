@@ -1,20 +1,57 @@
 \chapter{Conclusiones y trabajos futuros}
 \section{Conclusiones}
 %TODO redactar conclusiones
-1. Resumen del objetivo general y problema abordado, valoración positiva o negativa sobre los resultados y una justificación de por qué\\
-2. Repaso de los objetivos específicos indicando porcentaje de realización, resumen de lo que se ha hecho para conseguirlo e indicar dónde están las evidencias (capítulo o sección)\\
-3. Qué del grado me sirvió para el TFG y qué tuve que aprender\\
--> Cambié de Notion a Logseq porque se cayó el servidor y me costó acceder a mis notas bibliográficas ralentizando mi desarrollo del estado del arte
--> Cambié de Overleaf a TexStudio por la limitación de la compilación
-4. Valoración personal sobre el TFG y resultados\\
+
+A través del desarrollo de este trabajo, se logra investigar la accesibilidad en videojuegos para personas con visión limitada o nula a través del estudio e implementación de estrategias de sonificación. Se han recopilado heurísticas y técnicas de múltiples fuentes con el objetivo de funcionar de guía para los programadores que busquen programar juegos con mejor accesibilidad y se han aplicado de manera práctica.\\
+
+Siguiendo los objetivos generales y específicos del trabajo, se indica el resumen de los esfuerzos orientados a ellos y en qué capítulo o sección se encuentran los resultados:
+
+\begin{itemize}
+	\item OG1: Los criterios de desarrollo redactados se encuentran en la sección 2.2.3 de la memoria, listados por subsecciones. 
+	\subitem OE1.1, Las heurísticas fueron clasificadas en 5 categorías generales: Experiencia de juego, nivel y progresión, entrada de datos/software y hardware, instalación/configuración/ayuda, elementos sonoros y elementos gráficos. Estas categorías son subsecciones del apartado 2.2.3.
+	\subitem OE1.2, Cada heurística tiene asociadas preguntas que el desarrollador puede utilizar para comprobar si cumple adecuadamente el criterio de evaluación. Además se indican técnicas que pueden seguirse para mejorar los juegos y hacerlos más accesibles. Estas preguntas están en las secciones previamente listadas.
+	\item OG2, A lo largo del desarrollo, se programó y diseñó un audiojuego completo que siguió las técnicas descritas en el estado del arte. Entre las heurísticas utilizadas, se incluyen H2. H4, H5, H9, H11, H12, H14, H17, H18, H20, H21 y H22. La evaluación del juego y la experiencia de los usuarios se encuentra más adelante en este mismo capítulo.
+	\subitem OE2.1, El audiojuego tiene interfaces completamente sonificadas, todos los textos son descritos por voz y se puede navegar sin necesidad de ver la pantalla. Se explica en el apartado 3.5.4.1.
+	\subitem OE2.2, Se probó el juego con tres usuarios finales y se evaluó la accesibilidad en base a una encuesta. Sus respuestas son evaluadas en la siguiente subsección.
+	\subitem OE2.3, El juego presenta dos modalidades, aunque no se ha logrado probar la modalidad de multijugador. Se crearon en el apartado 3.5.4.2.
+	\subitem OE2.4, El juego ofrece control por mando y teclado, tal como indica el apartado del objetivo anterior.
+\end{itemize}
+
+Los conocimientos obtenidos en la asignatura de Programación Lúdica fueron aplicados a lo largo del desarrollo de este proyecto, así como la captación de requisitos explicada en Fundamentos del Software. Sin embargo, fue necesario investigar en mayor profundidad sobre la sonificación, los esfuerzos previos y las técnicas estándar antes de realizar el juego.\\
+
+Durante el trabajo se ha tenido que migrar de unas herramientas a otras cuando probaban que las limitaciones que presentaban impedían el avance correcto del desarrollo. Se utilizaba para la organización del trabajo y la creación del diagrama de Gantt la plataforma Notion, pero su uso exclusivo web impidió tomar notas bibliográficas cuando el servidor mostró problemas de sincronización. Por lo tanto, se tuvo que realizar el diagrama Gantt manualmente y se migraron todas las notas a texto plano local. Así mismo, se hacía uso de Overleaf para la redacción de la memoria, pero presenta límites para la compilación y necesariamente se tuvo que pasar la redacción a un editor LaTeX local. \\
+
+Los resultados del proyecto cumplen los objetivos planteados al inicio, pero no son suficientes por sí solos. Es necesario desarrollar más trabajos sobre accesibilidad universal, construir sobre lo que se ha presentado en el estado del arte y mejorar los problemas surgidos en pruebas de usuario.
+\subsection{Análisis de las pruebas de usuario}
+% analizar heurísticas en base a las descritas y poner pruebas de usuario.
+En esta sección de las conclusiones se busca evaluar el juego desarrollado a través de las heurísticas y añadir a esta información la experiencia de los usuarios.\\
+
+Para conseguir que el juego fuera intuitivo y que los jugadores sintieran que sus acciones afectan al mundo del juego (H2), se diseñaron puzles que solo utilizaran un botón y que explicaran en todo momento los efectos de interactuar con ellos. Todos los usuarios consideraron que los controles de teclado son intuitivos (H11 y H12), pero un usuario tuvo problemas con audio superpuesto entre el lector de pantallas y el juego al inicio (H13 y H14). Los menús fueron considerados intuitivos y fáciles de navegar (H4, H17 y H5), pero un usuario tuvo problemas con los audios puesto que se cortaban tras sus acciones. Se consideró que faltaba texto explicativo tras resolver algunos puzles, al pasar al lado de ellos o al utilizarlos, generando confusión (H9).\\
+
+Los usuarios apreciaron el tutorial e indicaron su interés en extenderlo para explicar el uso de la herramienta de sonar (H18). A todos los usuarios que probaron el juego se les proporcionó una guía (H18) de resolución de puzles en caso de que no pudieran completar los desafíos. Se utilizó la guía en el tutorial por un usuario. \\
+
+El puzle mejor valorado fue el piano, con votos de 6, 8 y 10 puntos sobre 10. Fue sencillo ubicarlo, no necesitaron la guía y se consideró que tenía bastante potencial a futuro. El tutorial fue el peor valorado, con votos de 6, 6 y 8 puntos sobre 10. Puede deberse a considerarse incompleto al no explicar el sonar como indica un usuario.\\
+
+El puzle de las salas fue probado antes de los usuarios con visión reducida y se consideró dificultoso y poco intuitivo debido a que no se podía realizar correctamente la relación entre las descripciones de las baldosas y los sonidos ambientales (H20 y H21). Se modificaron los sonidos y los tres usuarios con visión reducida pudieron resolverlo sin la guía, pero indicaron que no se avisaba al finalizar el puzle. Todos los usuarios pudieron ubicar exitosamente el fin del juego y terminarlo.\\
+
+
+\section{Limitaciones}
+
+El marco temporal en el que se redacta y desarrolla este proyecto está limitado y, por lo tanto, su alcance también. Los videojuegos, en el contexto empresarial y profesional, son trabajo grupal de múltiples disciplinas e implican desarrollo de años. Además, los trabajos relacionados con esta temática son escasos, por su especifidad. \\
+
+Las pruebas de usuario se han realizado adecuadas a las limitaciones descritas y la especificidad del usuario objetivo, que a demás de presentar ceguera total o parcial debía tener interés previo en videojuegos accesibles y estar familiarizado con el uso de ordenadores. Por lo tanto, las respuetas de los usuarios no pueden considerarse desde el punto de vista estadístico.
 \section{Trabajo futuro}
 % TODO redactar trabajo futuro
-tareas incompletas, nuevos objetivos e ideas, requisitos que no he tratado… se explican con un párrafo y cómo abordarlos.
-Hay que desarrollar más para permitir a los ciegos hacer sus propios juegos porque las plataformas como Unity no son accesibles y no son capaces de hacer sus propios juegos al estándar de los demás por eso. eso se referencia en Introducing the Gamer Information-Control Framework: Enabling Access to Digital Games for People with Visual Impairment (andradeIntroducingGamerInformationControl2020). A lo mejor todo esto de falta de audiojuegos o falta de accesibilidad se arreglaría si tuvieran las herramientas para mostrarnos lo que necesitan haciéndolo ellos tb.
 
--> Sonificación en ámbitos del estado se ajusta a varias legislaciones (la ley de accesibilidad web de europa, el boe  real decreto 193...), usar estas técnicas para adaptar aplicaciones oficiales sería muy interesante y de interés actual.
--> Las estrategias de sonificación se pueden usar en aplicaciones móviles y eso va acorde a la directiva 2016/2102 del parlamento europeo de accesibilidad en organismos públicos, desarrollar en esta línea es útil para el estado y para el cumplimiento de la ley.
+Primeramente, es necesario considerar el \textit{feedback} de los usuarios de prueba y modificar el videojuego o crear una nueva versión que expanda y mejore las técnicas utilizadas. No se llegó a probar la modalidad de multijugador con usuarios finales y por lo tanto no se comprobó su efectividad a la hora de integrar socialmente a usuarios con percepción sensorial distinta en un solo juego. Además, no se llegó a revisar la efectividad del uso del mando en contraposición con el teclado y la preferencia de los usuarios en este aspecto.\\
 
+No solo es necesario desarrollar juegos accesibles, sino que también se descubre en la investigación una demanda de entornos de desarrollo accesibles \cite{andradeIntroducingGamerInformationControl2020}, herramientas para permitir a los usuarios ciegos crear sus propios juegos. Al ser ellos quienes los diseñen, tendrían en cuenta sus necesidades y desarrollarían juegos que sirvan de ejemplo a otros programadores. \\
 
--> No hay estandarización de heurísticas de evaluación de la sonificación en aplicaciones de ordenador, solo en web, eso molaría mejorarlo
+Al final de la encuesta, se preguntó a los usuarios sobre el estado de la industria en cuestiones de accesibilidad, con el objetivo de listar en esta sección otras posibles líneas de proyectos de informática. Un usuario indicó que era necesario mejorar el sistema de navegación en los juegos de mundo abierto y que sería interesante explorar la asimetría de ritmo en juegos cooperativos, debido a la distinta percepción de los puzles u otras interacciones. Otro usuario añadió que lo más escaso es documentación, conocimiento y definir técnicas de diseño accesible. \\
+
+Un jugador concluyó que existía una ausencia de un estándar de accesibilidad en los juegos a seguir, y una falta de compromiso por parte de los nuevos juegos para seguirlo. Otro comentario indicaba que la accesibilidad no debía solo tener en cuenta a personas ciegas, sino que se debe abordar desde una perspectiva general, considerando todos los colectivos que conforman la sociedad y entendiendo que, mejorando la accesibilidad, se mejoraba la experiencia de muchos usuarios. Todos los jugadores de prueba concluyeron que la accesibilidad podía ser una ventaja competitiva en la industria. \\
+
+Como se ha indicado en la sección de legislación del estado del arte, hay una demanda creciente de herramientas para mejorar la accesibilidad digital en las aplicaciones del estado. Las técnicas de sonificación aquí descritas podrían ser utilizadas del mismo modo para estos entornos, tras su debida adaptación, para ayudar a cumplimentar los requisitos de la ley. Por ejemplo, se pueden aplicar a aplicaciones móviles, tal como indica la \say{directiva 2016/2102 del parlamento europeo de accesibilidad en organismos públicos}. \cite{DirectiveEU20162016}\\
+
+No existe, como sí en la web \cite{WebContentAccessibility}, un estándar de heurísticas para evaluar la sonificación en aplicaciones de ordenador. Es un ámbito de estudio potencial que brinda múltiples ramas de trabajo. \\
 

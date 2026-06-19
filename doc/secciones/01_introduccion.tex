@@ -1,46 +1,78 @@
 \chapter{Introducción}
-\section{Contexto/Antecedentes}
-%TODO Redactar Contexto
-1. Qué audiojuegos o interfaces auditivas existen, en qué consiste mi TFG, explicar qué es exactamente un audiojuego, en qué dominio se sitúa, qué enfoques se vienen defendiendo, qué mercado hay para ellos, qué facilita su existencia…\\
+\section{Contexto}
 
-2. Definiciones aclaratorias de términos que se vayan a usar más adelante o generalizaciones (por ejemplo que de ahora en adelante juego se refiera a audiojuego o algo así)\\
- En este caso me gustaría clasificar tal vez en secciones según si hablamos de puramente acercamientos a los audiojuegos, audiojuegos mixtos (con visuales) o simplemente interfaces auditivas que ya existen para otras cosas que no son juegos pero se pueden aplicar.\\
- \\
-
- Los juegos convencionales de ordenador, también llamados videojuegos, transmiten su contenido principalmente a través de gráficos haciéndolos inaccesibles para las personas con visión reducida o nula. Existen tecnologías para paliar este problema, como los lectores de pantallas o los amplificadores gráficos, que requieren intermediarios con las interfaces gráficas y adaptaciones para su correcto funcionamiento \cite[p ~482]{evans_screen_2008} \cite{accesskit_accesskit_nodate}. Los audiojuegos, por otro lado, presentan interfaces completas auditivas y se pueden jugar sin necesidad de gráficos que los complementen, aunque los posean por cuestiones estéticas. Este tipo de juegos han demostrado tener un gran potencial para el desarrollo de entretenimiento accesible  \cite{andradePlayingBlindRevealing2019} y \textit{serious games} educativos \cite{cabrera-solanoUseAudiogamesStrategic2020}.\\
+ Los juegos convencionales de ordenador, también llamados videojuegos, transmiten su contenido principalmente a través de gráficos haciéndolos inaccesibles para las personas con visión reducida o nula. Existen tecnologías para paliar este problema, como los lectores de pantalla o los amplificadores gráficos, que requieren intermediarios con las interfaces gráficas y adaptaciones para su correcto funcionamiento \cite[p ~482]{evans_screen_2008} \cite{accesskit_accesskit_nodate}. Los audiojuegos, por otro lado, presentan interfaces completas auditivas y se pueden jugar sin necesidad de gráficos que los complementen, aunque los posean por cuestiones estéticas. Este tipo de juegos han demostrado tener un gran potencial para el desarrollo de entretenimiento accesible  \cite{andradePlayingBlindRevealing2019} y \textit{serious games} educativos \cite{cabrera-solanoUseAudiogamesStrategic2020}.\\
  
   Los audiojuegos, como definición, son juegos en los que toda la información se transmite a través del audio. Dentro de esta categoría, existen audiojuegos que no poseen ningún tipo de interfaz gráfica y cuyos comandos pueden introducirse a través del habla, como los disponibles para asistentes como Amazon Alexa o Google Home \cite[p ~ 14]{allisonDesignPatternsVoice2018} y audiojuegos con interfaces estéticas, que pueden ser completas, como \textit{GBraille Asteroids}\cite[p ~234]{araujoDesignUsabilityBraillebased2016} o no, como \textit{The Vale: Shadow of the Crown} \cite{noauthor_vale_nodate} y \textit{Mudsplat}\cite{audiogamesNewPerspectives}. \\
   
-  Debido a la obligación de considerar la accesibilidad visual desde las etapas iniciales del diseño de los juegos \cite{LibroBlancoAccesibilidad}, la mayoría no suelen cumplir con los requisitos necesarios de forma fortuita y por esta razón es más infrecuente que una persona con discapacidad visual pueda acceder a los videojuegos convencionales.\\
+A lo largo de este trabajo nos referiremos a los juegos con interfaces auditivas completas como audiojuegos o juegos sonificados, independientemente de si presentan una interfaz visual. La sonificación es el proceso por el cual convertimos una interfaz visual en una interfaz auditiva completa para su utilización por usuarios ciegos. Como consideración, el uso de la palabra ciego se referirá a personas con visión tanto limitada como nula.\\
+
+  Debido a la obligación de considerar la accesibilidad visual desde las etapas iniciales del diseño de los juegos \cite{LibroBlancoAccesibilidad}, la mayoría no suelen cumplir con los requisitos necesarios de forma fortuita. Por esta razón es más infrecuente que una persona con discapacidad visual pueda acceder a los videojuegos convencionales. Esto favorece una brecha social, en la que no se puede acceder a los medios de socialización convencionales, como se explorará en la siguiente sección, por su inaccesibilidad. En este trabajo se desarrollará un audiojuego con modalidad multijugador, para que una persona ciega y una persona vidente puedan jugar cooperativamente, facilitando la integración social.\\
   
-\section{Justificación/Motivación}
-Según una encuesta realizada en el II Plan Nacional de Accesibilidad por el Ministerio de Derechos Sociales y Agenda 2030, la discapacidad sensorial visual era la segunda predominante \cite[p ~54]{plan-nacional-accesibilidad-2023}\\
-Entre los objetivos específicos de dicho plan nacional, en la medida 5.2.4, se incluye \say{Impulsar la innovación social y tecnológica en materia de accesibilidad} \cite[p ~42]{plan-nacional-accesibilidad-2023}. Este trabajo se enmarca en esa medida.\\
-En el catálogo de videojuegos accesibles de Ga11y, creado por la fundación ONCE, hay clasificados 91 juegos modernos según su accesibilidad, de los cuales solo dos están accesibles para visión nula y cinco para visión parcial \cite{Ga11y2022}.\\
-Los audiojuegos son estudiados desde hace más de una década \cite{nesteriukAudiogamesAccessibilityInclusion2018a}, pero hasta los últimos años los jugadores con visión reducida o nula no podían desarrollar sus propios audiojuegos debido a la poca accesibilidad de las plataformas comerciales \cite[p.~8]{andradePlayingBlindRevealing2019} y la implementación de opciones básicas de accesibilidad no se ofrecía nativamente en ellas \cite{stana_native_2025, engine_dev_nodate}.\\
 
-Dentro de los 17 objetivos de desarrollo sostenible de las naciones unidas, las dificultades que experimentan las personas con discapacidades se consideran en el objetivo 10 \say{reducir la desigualdad dentro y entre países} \cite{martinGoal10Reduce}. Según naciones unidas, \say{Una de cada cinco personas en el mundo ha experimentado discriminación [...], y las mujeres y las personas con discapacidad se ven afectadas de manera desproporcionada.} Parte de la justificación de desarrollar juegos accesibles es la reducir la desigualdad a través de la investigación tecnológica, facilitando un acceso universal a los programas informáticos. \\ 
+\section{Motivación}
+En el marco desarrollado anteriormente, se presenta un problema social relacionado con el ámbito de la informática. Existe una demanda gubernamental y empresarial de diseño de \textit{software} accesible y universal, pero no se proporcionan suficientes medios para lograr una formación completa para los desarrolladores ni criterios específicos para evaluar la calidad del producto. La ausencia de interfaces sonificadas afecta negativamente a la experiencia de los usuarios ciegos e impide su acceso a programas convencionales de ordenador. \\
 
-%TODO Redactar Motivación
-Esto también es descripción del problema
-    1. ¿Qué falta en el mercado?\\
-    2. ¿Qué necesidades existen respecto a la accesibilidad auditiva en juegos?\\
-    3. ¿Qué problemas tienen los que ya existen?\\
-    4.  ¿Cómo se puede potenciar el desarrollo de audiojuegos?\\
-    5.  ¿Por qué se puede potenciar?\\
-    6. ¿Por qué merece la pena que yo trabaje en esto?\\
-    7.  ¿Por qué debe hacer esa tarea necesariamente un ingeniero o ingeniera informáticos?\\
+Según una encuesta realizada en el \textit{II Plan Nacional de Accesibilidad por el Ministerio de Derechos Sociales y Agenda 2030}, la discapacidad sensorial visual era la segunda predominante \cite[p ~54]{plan-nacional-accesibilidad-2023}. Las personas ciegas presentan un porcentaje significativo de la población que necesita tecnologías de asistencia para acceder a los servicios del estado, programas de ordenador y formularios y aplicaciones alojados en internet.\\
+
+Entre los objetivos específicos de dicho plan nacional, en la medida 5.2.4, se incluye \say{Impulsar la innovación social y tecnológica en materia de accesibilidad} \cite[p ~42]{plan-nacional-accesibilidad-2023}. Este trabajo se enmarca en esa medida, dando herramientas de desarrollo universal y accesible que pueden aplicarse agnósticas al entorno de desarrollo empleado.\\
+
+Además, en el catálogo de videojuegos accesibles de \textit{Ga11y}, creado por la fundación ONCE, hay clasificados 91 juegos modernos según su accesibilidad, de los cuales solo dos están accesibles para visión nula y cinco para visión parcial \cite{Ga11y2022}. La accesibilidad visual, a pesar de la predominancia de la ceguera en la población, es un aspecto ignorado mayormente por los estudios de videojuegos profesionales, aumentando la brecha de desigualdad digital entre los jugadores.\\
+
+Los audiojuegos son estudiados desde hace más de una década \cite{nesteriukAudiogamesAccessibilityInclusion2018a}, pero hasta los últimos años los jugadores con visión reducida o nula no podían desarrollar sus propios audiojuegos debido a la poca accesibilidad de las plataformas comerciales \cite[p.~8]{andradePlayingBlindRevealing2019} y la implementación de opciones básicas de accesibilidad no se ofrecía nativamente en ellas \cite{stana_native_2025, engine_dev_nodate}. Este trabajo tiene como propósito visibilizar estos problemas y proponer soluciones para los desarrolladores que necesiten orientación en sus aplicaciones universalmente accesibles. \\
+
+Dentro de los 17 objetivos de desarrollo sostenible de las Naciones Unidas, las dificultades que experimentan las personas con discapacidades se consideran en el objetivo 10 \say{reducir la desigualdad dentro y entre países} \cite{martinGoal10Reduce}. Según Naciones Unidas, \say{Una de cada cinco personas en el mundo ha experimentado discriminación [...], y las mujeres y las personas con discapacidad se ven afectadas de manera desproporcionada.} Parte de la justificación de desarrollar juegos accesibles es la de reducir la desigualdad a través de la investigación tecnológica, facilitando un acceso universal a los programas informáticos. \\ 
+
+Se requiere que ingenieros informáticos propongan soluciones a estos problemas de diseño software, sugieran alternativas e investiguen en las herramientas existentes en los ordenadores comerciales para facilitar su distribución y estandarización. La elección de este tema surge por la investigación personal sobre juegos accesibles para personas con discapacidad visual y la escasa cantidad de resultados, tanto en juegos como en herramientas para crearlos. Tanto los gobiernos \cite{plan-nacional-accesibilidad-2023} como los motores de desarrollo \cite{engine_dev_nodate} están en los últimos años mostrando interés en este tipo de soluciones, motivando así la redacción y el desarrollo de este proyecto.\\
+
+Considerando todo lo anteriormente expuesto, el trabajo aquí presente propone criterios unificados de evaluación de audiojuegos accesibles y desarrolla un prototipo con modalidades de uno y dos jugadores, con el propósito de mostrar un ejemplo sonificado que sirva de referencia futura para otros ingenieros informáticos. Además, se incluirán la evaluación de usuarios finales y la descripción de los problemas surgidos durante el prototipado, evitando así repetir errores en el desarrollo de juegos accesibles.\\
+
 \section{Objetivos}
-%TODO Redactar Objetivos
-Objetivos generales numerados
-menos concretos que se pueden descomponer en objetivos específicos. (puedo formular objetivos iniciales y luego objetivos modificados según las necesidades que surgen en el desarrollo)
+
+Los objetivos de este trabajo se presentan en dos categorías. La primera, los objetivos generales (OG) presentan a grandes rasgos la orientación del trabajo. La segunda, los objetivos específicos (OE), enmarcan con mayor detalle las especificaciones a las que aspiran llegar los objetivos generales. Se listan a continuación en sus respectivas categorías:
+\begin{itemize}
+	\item OG1, Redactar una lista de criterios de desarrollo de videojuegos accesibles para usuarios finales que presenten ceguera total o parcial.
+	\subitem OE1.1, Clasificar los criterios de evaluación en categorías específicas del ámbito informático (heurísticas \textit{hardware}, heurísticas de documentación, heurísticas \textit{software}...) para su posterior referencia.
+	\subitem OE1.2, Indicar dos o más ejemplos aclaratorios sobre los elementos a los que se refiere cada criterio de evaluación.
+	\item OG2, Programar y diseñar un audiojuego completo para aplicar las heurísticas redactadas .
+	\subitem OE2.1, El audiojuego tendrá interfaces completamente sonificadas, accesibles por usuarios con visión nula.
+	\subitem OE2.2, Se probará con usuarios finales para comprobar su accesibilidad a lo largo del desarrollo.
+	\subitem OE2.3, El juego presentará dos modalidades, una para un solo jugador con ceguera total o parcial y otra para un jugador ciego y otro vidente.
+	\subitem OE2.4, El juego ofrecerá controles por teclado y por mando, para asegurar compatibilidad con herramientas de accesibilidad previamente instaladas en los ordenadores.
+\end{itemize}
+La utilización del resultado de OG1 en el desarrollo de OG2 asegurará una prueba de los criterios en un caso de uso real.
 \section{Estructura de la memoria}
 %TODO Redactar Estructura de la memoria
-Lo escribo al final
+La memoria tiene las siguientes secciones, junto a su contenido:
+\begin{itemize}
+	\item En el capítulo 1 se han presentado el contexto y motivación de este trabajo, así como los objetivos generales y específicos que se proponen para abordar la problemática del proyecto.
+	\item En el capítulo 2, se investiga el estado de la legislación sobre accesibilidad en programas informáticos, se propone una lista de heurísticas de evaluación de juegos accesibles y se analizan con dichas heurísticas audiojuegos presentes en otros trabajos.
+	\item En el capítulo 3, se presenta una propuesta de audiojuego desarrollada siguiendo la guía de las heurísticas. Se analizan sus requisitos y se estiman sus costes y el tiempo que requiere desarrollarla. Por último se explican las pruebas de usuario realizadas.
+	\item En el último capítulo se presentan las conclusiones, los resultados de las pruebas de usuario analizados con las heurísticas del capítulo 2 y trabajos futuros a partir del presente TFG.
+	\item En el anexo A está descrita la encuesta de accesibilidad que se presentó a los usuarios para que evaluaran el juego desarrollado en la propuesta.
+	\item Finalmente, se presentan las referencias bibliográficas utilizadas en este proyecto.
+\end{itemize}
+\section{Declaración responsable del uso de inteligencia artificial generativa}
+En el presente trabajo se ha utilizado la inteligencia artificial generativa para los siguientes propósitos:
+\begin{itemize}
+	\item Asistencia en búsqueda de información. Esto incluye búsqueda de documentación sobre las herramientas utilizadas, listado de legislación de la temática y enlaces a material educativo sobre planificación de proyectos.
+	\item Asistencia en la búsqueda de sinónimos durante la redacción.
+	\item Resumen de características de herramientas de desarrollo para acotar la selección disponible.
+\end{itemize}
+Se declara que \textbf{no se ha utilizado} inteligencia artificial generativa para los siguientes propósitos:
+\begin{itemize}
+	\item Redacción del trabajo y sus secciones.
+	\item Programación de la propuesta.
+\end{itemize}
 \section{Repositorio del trabajo}
 %TODO Redactar Repositorio del trabajo
-\section{Dónde se ha publicado}
-%TODO Redactar Dónde se ha publicado
-Probablemente un release de Github
-
-Este proyecto es software libre, y está liberado con la licencia \cite{gplv3}.
+El código fuente y los binarios correspondientes al desarrollo de este trabajo se han publicado en un repositorio Github \footnote{\url{https://github.com/mamRobles/TFG-2025-2026}}. La estructura del repostiorio se detalla a continuación:
+\begin{itemize}
+	\item \textit{doc}: En esta carpeta están los archivos necesarios para compilar la memoria. Existe un archivo \textit{Makefile} para facilitar esta tarea.
+	\item \textit{code}: En esta carpeta están los archivos de código y escenas del desarrollo del juego.
+	\subitem Carpetas \textit{Scenes}: Contienen las escenas del motor Godot.
+	\subitem Carpetas \textit{Scripts}: Contienen el código fuente de los nodos presentes en las escenas.
+	
+\end{itemize} Este proyecto es software libre y está liberado con la licencia gplv3 \cite{QuickGuideGPLv3}.
+\newpage
+\thispagestyle{empty}
